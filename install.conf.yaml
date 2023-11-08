@@ -9,10 +9,11 @@
 # in $HOME, create symlinks to each dotfile
 # missing rhs will automatically be interpreted as ~./foo: foo
 - link:
-    ~/.dircolors:
-    ~/.zshrc:
     ~/.config:
+    ~/.dircolors:
     ~/.gitconfig:
+    ~/.zshenv:
+    ~/.zshrc:
 
 # - create:
 
