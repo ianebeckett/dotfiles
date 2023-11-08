@@ -16,5 +16,11 @@
 
 # - create:
 
-#- shell:
+- shell:
 #  - [git submodule update --init --recursive, Installing submodules]
+  - echo "executing shell scripts from install.conf.yaml"
+  - 
+    command: ./test.zsh
+    stdout: true
+    stderr: true
+    
