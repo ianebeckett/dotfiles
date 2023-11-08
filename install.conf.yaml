@@ -6,9 +6,13 @@
 
 - clean: ['~']
 
+# in $HOME, create symlinks to each dotfile
+# missing rhs will automatically be interpreted as ~./foo: foo
 - link:
-    ~/.zshrc: zshrc
-#    ~/.vim: vim
+    ~/.dircolors:
+    ~/.zshrc:
+    ~/.config:
+    ~/.gitconfig:
 
 # - create:
 
