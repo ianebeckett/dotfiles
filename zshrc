@@ -1,5 +1,6 @@
 # zshrc only loads in interactive shells
 # use zshenv to run commands in non-interactive shells
+echo 'Howdy from .zshrc'
 
 # variables
 # use bat for man page syntax highlighting
@@ -35,11 +36,6 @@ function ll() {
 function cd() {
     builtin cd $@
     ls
-}
-
-# exists foo && bar || baz # (exists foo) ? bar : baz;
-function exists() {
-    command -v $1 > /dev/null 2>&1
 }
 
 # prompt customization

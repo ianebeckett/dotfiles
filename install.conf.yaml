@@ -1,4 +1,4 @@
-# dotbot configuration
+# dotbot configuration, used by ~/.dotfiles/install
 
 - defaults:
     link:
@@ -9,19 +9,19 @@
 # in $HOME, create symlinks to each dotfile
 # missing rhs will automatically be interpreted as ~./foo: foo
 - link:
-    ~/.config:
-    ~/.dircolors:
-    ~/.gitconfig:
-    ~/.zshenv:
     ~/.zshrc:
+    ~/.zshenv:
+    ~/.config:
+    ~/.gitconfig:
+    ~/.dircolors:
 
 # - create:
 
 - shell:
 #  - [git submodule update --init --recursive, Installing submodules]
-  - echo "executing shell scripts from install.conf.yaml"
-  - 
-    command: ./test.zsh
-    stdout: true
-    stderr: true
+  - echo 'executing dotbot scripts'
+  #- 
+  #  command: ./test.zsh # run test script
+  #  stdout: true
+  #  stderr: true
     

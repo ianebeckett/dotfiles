@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
 
-echo "running test.zsh"
+echo 'running test.zsh'
 
-mkdir test_dir
+mkdir test_dir # make test directory
