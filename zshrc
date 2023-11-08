@@ -1,3 +1,6 @@
+# zshrc only loads in interactive shells
+# use zshenv to run commands in non-interactive shells
+
 # variables
 # use bat for man page syntax highlighting
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
@@ -33,6 +36,11 @@ function cd() {
     builtin cd $@
     ls
 }
+
+# exists foo && bar || baz # (exists foo) ? bar : baz;
+#function exists() {
+#    command -v $1 > /dev/null 2>&1
+#}
 
 # prompt customization
 
