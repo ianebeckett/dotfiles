@@ -13,15 +13,14 @@ HISTFILE=~/.zsh_history
 
 # aliases
 # bypass an alias with $command foo
-
-alias ls='ls -Fh --color=auto;'
+alias ls='ls -lAFh --color=auto;'
 
 alias gdb='gdb -quiet'
 
 # functions
 function ll() {
     { echo permissions links owner group size month date time name;
-        command ls -AlFh; # --color-auto can't be used here, since it's piped into column
+        command ls -lAFh; # --color-auto can't be used here, since it's piped into column
     } | 
     column -t |
     grep -v "total" # remove total size of this directory from ls
