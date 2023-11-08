@@ -1,4 +1,6 @@
 # variables
+# use bat for man page syntax highlighting
+export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
 # zsh options
 setopt hist_ignore_dups share_history # see zshoptions(1)
@@ -13,7 +15,7 @@ HISTFILE=~/.zsh_history
 
 # aliases
 # bypass an alias with $command foo
-alias ls='ls -lAFh --color=auto;'
+alias ls='ls -lAFh --color=auto'
 
 alias gdb='gdb -quiet'
 
@@ -56,7 +58,7 @@ PROMPT='%F{24}[%n@%m$f %F{24}%~]%f${vcs_info_msg_0_}%(!.#.$) ' # %(!.#.%$) gives
 #TODO: only show %L if in a subshell i.e if greater than 1
 #PROMPT='%F{24}[%n@%m$f %F{24}%~]%f L%L ${vcs_info_msg_0_}%(!.#.$) '
 
-# custom PATH locations
+# custom $PATH locations
 export JAVA_HOME=/usr/lib/jvm/jdk-19
 export PATH=/usr/local/apache-maven-3.9.5/bin:$JAVA_HOME:$PATH
 
