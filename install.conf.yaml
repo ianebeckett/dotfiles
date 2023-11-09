@@ -14,6 +14,7 @@
     ~/.config:
     ~/.gitconfig:
     ~/.dircolors:
+    ~/.local:
 
 # - create:
 

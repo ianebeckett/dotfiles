@@ -21,6 +21,9 @@ HISTFILE=~/.zsh_history
 # bypass an alias with $command foo
 alias ls='ls -lAFh --color=auto'
 
+# trail prints $PATH with one path per line
+alias trail='<<<${(F)path}'
+
 alias gdb='gdb -quiet'
 
 # functions
@@ -35,7 +38,7 @@ function ll() {
 # print contents after moving to given directory
 function cd() {
     builtin cd $@
-    ls
+    command ls -A --color=auto
 }
 
 # prompt customization
@@ -51,18 +54,12 @@ zstyle ':vcs_info:*' enable git # save some time by only enabling git
 zstyle ':vcs_info:*' check-for-changes true # needed for %c
 zstyle ':vcs_info:*' unstagedstr '%F{1} *'
 zstyle ':vcs_info:*' formats '%F{green}[%s:%b%u%F{green}]%f' # git (vcs) style
-precmd() { vcs_info } # run vcs_info as a pre-command
+precmd() {vcs_info} # run vcs_info as a pre-command
 
 PROMPT='%F{24}[%n@%m$f %F{24}%~]%f${vcs_info_msg_0_}%(!.#.$) ' # %(!.#.%$) gives # if root else $. see zshmisc(1)
 
-#RPROMPT=foo # right-side prompt
-
-# use %L to show level of subshell nesting
-# enter a subshell: $zsh; exit subshell: $exit
-#TODO: only show %L if in a subshell i.e if greater than 1
-#PROMPT='%F{24}[%n@%m$f %F{24}%~]%f L%L ${vcs_info_msg_0_}%(!.#.$) '
-
 # custom $PATH locations
+#TODO: stop duplicating elements in PATH
 export JAVA_HOME=/usr/lib/jvm/jdk-19
 export PATH=/usr/local/apache-maven-3.9.5/bin:$JAVA_HOME:$PATH
 
