@@ -1,12 +1,14 @@
 # zshrc only loads in interactive shells
-# use zshenv to run commands in non-interactive shells
+# use ~/.dotfiles/zshenv to run commands in non-interactive shells
 echo 'howdy from .zshrc'
 
 # variables
+# view system environment variables with env
+
 # use bat for man page syntax highlighting
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
-# zsh options. see $man zshoptions
+# zsh options. see man zshoptions
 
 # Turn off all beeps
 unsetopt BEEP
@@ -18,11 +20,12 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # aliases
-# bypass an alias with $command foo
+# bypass an alias with command foo
 alias ls='ls -lAFh --color=auto'
 
-# trail prints $PATH with one path per line
-alias trail='<<<${(F)path}'
+# print $PATH, one per line
+# In contrast to $PATH, $path is an array of space-delimited strings
+alias path='<<<${(F)path}'
 
 alias gdb='gdb -quiet'
 
@@ -43,7 +46,7 @@ function cd() {
 
 # prompt customization
 
-# ls colors. for more info: $dircolors -p, $man dircolors
+# ls colors. for more info: dircolors -p, man dircolors
 eval $(dircolors -b ~/.dircolors)
 
 # git prompt
@@ -69,3 +72,4 @@ ssh-add -q ~/.ssh/yoga
 
 # cd to $HOME when sourcing #TODO: what about when starting a subshell?
 cd
+ 
