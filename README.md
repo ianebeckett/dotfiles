@@ -11,3 +11,4 @@ edit dotbot script: ~/.dotfiles/install.conf.yaml
     else: pacman?
 #TODO: add packages to dotfiles
     bat
+#TODO: remove all fonts other than jetbrains-mono/ttl/, i.e. variable and webfonts? possibly bloat

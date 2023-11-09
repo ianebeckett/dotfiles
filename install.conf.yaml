@@ -18,8 +18,12 @@
 
 # - create:
 
-#- shell:
+- shell:
 #  - [git submodule update --init --recursive, Installing submodules]
+# confirm font installed correctly by running fc-list | grep "<name-of-font>"
+  - command: fc-cache -fv # build font #TODO: use -E, check retval and print on error?
+    stdout: false
+    stderr: true
   #- 
   #  command: ./test.zsh # run test script
   #  stdout: true
