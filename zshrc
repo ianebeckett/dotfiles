@@ -1,18 +1,18 @@
 # zshrc only loads in interactive shells
 # use zshenv to run commands in non-interactive shells
-echo 'Howdy from .zshrc'
+echo 'howdy from .zshrc'
 
 # variables
 # use bat for man page syntax highlighting
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
-# zsh options
-setopt hist_ignore_dups share_history # see zshoptions(1)
+# zsh options. see $man zshoptions
 
 # Turn off all beeps
 unsetopt BEEP
-
-# Keep 10000 lines of history
+ 
+# history
+setopt HIST_IGNORE_ALL_DUPS SHARE_HISTORY
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history

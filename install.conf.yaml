@@ -17,9 +17,8 @@
 
 # - create:
 
-- shell:
+#- shell:
 #  - [git submodule update --init --recursive, Installing submodules]
-  - echo 'executing dotbot scripts'
   #- 
   #  command: ./test.zsh # run test script
   #  stdout: true
