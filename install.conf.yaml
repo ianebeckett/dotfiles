@@ -1,5 +1,7 @@
 # dotbot configuration, used by ~/.dotfiles/install
 
+#TODO: script to add font
+
 - defaults:
     link:
       relink: true
@@ -11,7 +13,6 @@
 - link:
     ~/.zshrc:
     ~/.zshenv:
-    ~/.config:
     ~/.gitconfig:
     ~/.dircolors:
     ~/.local:
