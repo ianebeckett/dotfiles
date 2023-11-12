@@ -22,14 +22,7 @@
 
 - shell:
 #  - [git submodule update --init --recursive, Installing submodules]
-
-  # reorganize home directory
-  - command: mv ~/Desktop ~/desktop #TODO:fais in script, but works fine when done manually
-  - command: mv ~/Downloads ~/downloads #TODO:fais in script, but works fine when done manually
-  - command: mv ~/Pictures ~/pictures
-  - command: mv ~/Music ~/music
-  - command: rmdir ~/Public
-  - command: rmdir ~/Templates
+  - chsh -s /bin/zsh
 
 #TODO: fix automated font setup
 # preferred fonts: JetBrains Mono, family: monospace

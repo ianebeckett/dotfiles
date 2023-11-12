@@ -21,7 +21,7 @@ HISTFILE=~/.zsh_history
 
 # aliases
 # bypass an alias with command foo
-alias ls='ls -lAFh --color=auto'
+alias ls='ls -lFh --color=auto'
 
 # print $PATH, one per line
 # In contrast to $PATH, $path is an array of space-delimited strings
@@ -57,6 +57,8 @@ zstyle ':vcs_info:*' enable git # save some time by only enabling git
 zstyle ':vcs_info:*' check-for-changes true # needed for %c
 zstyle ':vcs_info:*' unstagedstr '%F{1} *'
 zstyle ':vcs_info:*' formats '%F{green}[%s:%b%u%F{green}]%f' # git (vcs) style
+
+# precmd runs before every prompt. Use it to hot-updatethings between commands
 precmd() {vcs_info} # run vcs_info as a pre-command
 
 PROMPT='%F{24}[%n@%m$f %F{24}%~]%f${vcs_info_msg_0_}%(!.#.$) ' # %(!.#.%$) gives # if root else $. see zshmisc(1)
