@@ -1,15 +1,16 @@
 # dotbot configuration, used by ~/.dotfiles/install
 
-#TODO: script to add font
-
 - defaults:
     link:
-      relink: true
+      relink: false # replaces pre-existing link
 
-- clean: ['~']
+- clean: ['~'] #TODO: what is this?
 
-# in $HOME, create symlinks to each dotfile
-# missing rhs will automatically be interpreted as ~./foo: foo
+# create symlinks to dotfiles
+# if the files already exists, its contents have to be moved first
+#TODO: enable linking even if local file already exists
+# ~/.foo is shorthand for
+# ~./foo: ~/.dotfiles/foo
 - link:
     ~/.zshrc:
     ~/.zshenv:
@@ -21,12 +22,22 @@
 
 - shell:
 #  - [git submodule update --init --recursive, Installing submodules]
+
+  # reorganize home directory
+  - command: mv ~/Desktop ~/desktop #TODO:fais in script, but works fine when done manually
+  - command: mv ~/Downloads ~/downloads #TODO:fais in script, but works fine when done manually
+  - command: mv ~/Pictures ~/pictures
+  - command: mv ~/Music ~/music
+  - command: rmdir ~/Public
+  - command: rmdir ~/Templates
+
+#TODO: fix automated font setup
+# preferred fonts: JetBrains Mono, family: monospace
 # confirm font installed correctly by running fc-list | grep "<name-of-font>"
-  - command: fc-cache -fv # build font #TODO: use -E, check retval and print on error?
-    stdout: false
-    stderr: true
+  # - command: fc-cache -fv # build font #TODO: use -E, check retval and print on error?
+  #   stdout: false
+  #   stderr: true
   #- 
   #  command: ./test.zsh # run test script
   #  stdout: true
   #  stderr: true
-    
