@@ -1,6 +1,7 @@
 # dotbot configuration, used by ~/.dotfiles/install
 # https://github.com/anishathalye/dotbot
 
+#TODO: configure defaults
 - defaults:
     link:
       relink: false # replaces pre-existing link
@@ -9,6 +10,7 @@
 - clean: ['~']
 
 #TODO: handle "Commands within a task do not have a defined ordering".
+#TODO: move most of this to a bash/sh script? This would be less verbose and less reliant on dotbot
 #TODO: quiet commands with descriptions
 - shell:
   - command: sudo apt-get install -y zsh
@@ -18,8 +20,7 @@
   - command: chsh -s $(which zsh) #TODO: which vs command -v ?
     stdout: true
     stderr: true
-  - command: git config --global user.name 'Ian Beckett'
-  - command: git config --global user.email '41558014+ianebeckett@users.noreply.github.com'
+  - command: ssh-keygen -t ed25519 -C ian@$(cat /etc/hostname) #TODO: should this comment be based on my git email, or my hostname?
 
 #  - [git submodule update --init --recursive, Installing submodules]
 
@@ -36,17 +37,21 @@
 
 # create symlinks to dotfiles
 # if the files already exists, its contents have to be moved first
-#TODO: enable linking even if local file already exists
+#TODO: specify dotbot arguments for link
+#TODO: enable linking, even if local file already exists, without breaking things
 # ~/.foo is shorthand for
 # ~./foo: ~/.dotfiles/foo
 - link:
     ~/.zshrc:
     ~/.zshenv:
+    ~/.zsh_history:
     ~/.gitconfig:
     ~/.dircolors:
     ~/.local:
 
 - shell:
+  - command: git config --global user.name 'Ian Beckett'
+  - command: git config --global user.email '41558014+ianebeckett@users.noreply.github.com'
   # separated out to minimize scope of -rf flags
   #TODO: transfer this data to zsh before deleting?
   #TODO: does bash recreate these before switching to zsh?

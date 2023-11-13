@@ -69,9 +69,9 @@ PROMPT='%F{24}[%n@%m$f %F{24}%~]%f${vcs_info_msg_0_}%(!.#.$) ' # %(!.#.%$) gives
 export JAVA_HOME=/usr/lib/jvm/jdk-19
 export PATH=/usr/local/apache-maven-3.9.5/bin:$JAVA_HOME:$PATH
 
-# start ssh-agent
-eval $(ssh-agent -s) > /dev/null
-ssh-add -q ~/.ssh #TODO: does this work?
+# start ssh-agent (apparently, keyring already does this on ubuntu: $ ps -aux | grep ssh)
+#eval "$(ssh-agent -s)" > /dev/null
+#ssh-add -q ~/.ssh #TODO: does this work?
 
 # cd to $HOME when sourcing #TODO: what about when starting a subshell?
 cd
