@@ -1,10 +1,35 @@
 # dotbot configuration, used by ~/.dotfiles/install
+# https://github.com/anishathalye/dotbot
 
 - defaults:
     link:
       relink: false # replaces pre-existing link
 
-- clean: ['~'] #TODO: what is this?
+# remove broken symlinks
+- clean: ['~']
+
+#TODO: handle "Commands within a task do not have a defined ordering".
+- shell:
+  - command: sudo apt-get install -y zsh
+    description: installing zsh
+    stdout: true
+    stderr: true
+  - command: chsh -s $(which zsh) #TODO: which vs command -v ?
+    stdout: true
+    stderr: true
+
+#  - [git submodule update --init --recursive, Installing submodules]
+
+#TODO: fix automated font setup
+# preferred fonts: JetBrains Mono, family: monospace
+# confirm font installed correctly by running fc-list | grep "<name-of-font>"
+  # - command: fc-cache -fv # build font #TODO: use -E, check retval and print on error?
+  #   stdout: false
+  #   stderr: true
+  #- 
+  #  command: ./test.zsh # run test script
+  #  stdout: true
+  #  stderr: true
 
 # create symlinks to dotfiles
 # if the files already exists, its contents have to be moved first
@@ -18,19 +43,6 @@
     ~/.dircolors:
     ~/.local:
 
-# - create:
-
 - shell:
-#  - [git submodule update --init --recursive, Installing submodules]
-  - chsh -s /bin/zsh
-
-#TODO: fix automated font setup
-# preferred fonts: JetBrains Mono, family: monospace
-# confirm font installed correctly by running fc-list | grep "<name-of-font>"
-  # - command: fc-cache -fv # build font #TODO: use -E, check retval and print on error?
-  #   stdout: false
-  #   stderr: true
-  #- 
-  #  command: ./test.zsh # run test script
-  #  stdout: true
-  #  stderr: true
+  - command: source ~/.zshrc
+  - description: dotbot complete. Starting a new shell with ~/.zshrc

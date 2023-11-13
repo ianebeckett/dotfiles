@@ -9,11 +9,9 @@ echo 'howdy from .zshrc'
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
 # zsh options. see man zshoptions
-
-# Turn off all beeps
 unsetopt BEEP
  
-# history
+# history #TODO: is this slowing my startup down?
 setopt HIST_IGNORE_ALL_DUPS SHARE_HISTORY
 HISTSIZE=10000
 SAVEHIST=10000
@@ -21,15 +19,23 @@ HISTFILE=~/.zsh_history
 
 # aliases
 # bypass an alias with command foo
-alias ls='ls -lFh --color=auto'
-
-# print $PATH, one per line
-# In contrast to $PATH, $path is an array of space-delimited strings
-alias path='<<<${(F)path}'
 
 alias gdb='gdb -quiet'
 
+alias ls='ls -lFh --color=auto'
+
+# print $PATH, one per line
+alias path='<<<${(F)path}'
+
+# print contents after moving to given directory
+#TODO: move to precmd?
+function cd() {
+    builtin cd $@
+    command ls -A --color=auto
+}
+
 # functions
+#TODO: use eza instead of pipes?
 function ll() {
     { echo permissions links owner group size month date time name;
         command ls -lAFh; # --color-auto can't be used here, since it's piped into column
@@ -37,12 +43,6 @@ function ll() {
     column -t |
     grep -v "total" # remove total size of this directory from ls
 };
-
-# print contents after moving to given directory
-function cd() {
-    builtin cd $@
-    command ls -A --color=auto
-}
 
 # prompt customization
 
@@ -56,9 +56,9 @@ setopt prompt_subst # allow prompt substitution
 zstyle ':vcs_info:*' enable git # save some time by only enabling git
 zstyle ':vcs_info:*' check-for-changes true # needed for %c
 zstyle ':vcs_info:*' unstagedstr '%F{1} *'
-zstyle ':vcs_info:*' formats '%F{green}[%s:%b%u%F{green}]%f' # git (vcs) style
+zstyle ':vcs_info:*' formats '%F{green}[%s:%b%u%F{green}]%f' # style
 
-# precmd runs before every prompt. Use it to hot-updatethings between commands
+# precmd runs before every prompt. Use it to hot-update between commands
 precmd() {vcs_info} # run vcs_info as a pre-command
 
 PROMPT='%F{24}[%n@%m$f %F{24}%~]%f${vcs_info_msg_0_}%(!.#.$) ' # %(!.#.%$) gives # if root else $. see zshmisc(1)
@@ -70,7 +70,7 @@ export PATH=/usr/local/apache-maven-3.9.5/bin:$JAVA_HOME:$PATH
 
 # start ssh-agent
 eval $(ssh-agent -s) > /dev/null
-ssh-add -q ~/.ssh/yoga
+ssh-add -q ~/.ssh #TODO: does this work?
 
 # cd to $HOME when sourcing #TODO: what about when starting a subshell?
 cd
