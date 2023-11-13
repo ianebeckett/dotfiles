@@ -1,6 +1,6 @@
 # zshrc only loads in interactive shells
 # use ~/.dotfiles/zshenv to run commands in non-interactive shells
-echo "\n howdy from .zshrc \n"
+echo "howdy from .zshrc \n"
 
 # variables
 # view system environment variables with env

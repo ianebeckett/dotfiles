@@ -40,7 +40,7 @@ sudo apt update
 # install packages
 # use apt-get and apt-cache in lieu of apt for backwards compatibility with scripts
 # be sure to install desired packages that were removed while purging snaps
-for i in bat tldr vlc yt-dlp; do
+for i in bat git tldr vlc yt-dlp; do
   sudo nala install -y $i
 done
 
