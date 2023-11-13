@@ -9,6 +9,7 @@
 - clean: ['~']
 
 #TODO: handle "Commands within a task do not have a defined ordering".
+#TODO: quiet commands with descriptions
 - shell:
   - command: sudo apt-get install -y zsh
     description: installing zsh
@@ -17,11 +18,13 @@
   - command: chsh -s $(which zsh) #TODO: which vs command -v ?
     stdout: true
     stderr: true
+  - command: git config --global user.name 'Ian Beckett'
+  - command: git config --global user.email '41558014+ianebeckett@users.noreply.github.com'
 
 #  - [git submodule update --init --recursive, Installing submodules]
 
 #TODO: fix automated font setup
-# preferred fonts: JetBrains Mono, family: monospace
+# preferred fonts: JetBrains Mono > Ubuntu Mono > Cascadia Mono > family: monospace
 # confirm font installed correctly by running fc-list | grep "<name-of-font>"
   # - command: fc-cache -fv # build font #TODO: use -E, check retval and print on error?
   #   stdout: false

@@ -18,6 +18,7 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # aliases
+# use single quotes to preserve the string literal
 # bypass an alias with command foo
 
 alias gdb='gdb -quiet'
@@ -41,7 +42,7 @@ function ll() {
         command ls -lAFh; # --color-auto can't be used here, since it's piped into column
     } | 
     column -t |
-    grep -v "total" # remove total size of this directory from ls
+    grep -v 'total' # remove total size of this directory from ls
 };
 
 # prompt customization
