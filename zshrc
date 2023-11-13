@@ -1,6 +1,6 @@
 # zshrc only loads in interactive shells
 # use ~/.dotfiles/zshenv to run commands in non-interactive shells
-echo 'howdy from .zshrc'
+echo "\n howdy from .zshrc \n"
 
 # variables
 # view system environment variables with env
@@ -29,7 +29,6 @@ alias ls='ls -lFh --color=auto'
 alias path='<<<${(F)path}'
 
 # print contents after moving to given directory
-#TODO: move to precmd?
 function cd() {
     builtin cd $@
     command ls -A --color=auto
@@ -71,8 +70,7 @@ export PATH=/usr/local/apache-maven-3.9.5/bin:$JAVA_HOME:$PATH
 
 # start ssh-agent (apparently, keyring already does this on ubuntu: $ ps -aux | grep ssh)
 #eval "$(ssh-agent -s)" > /dev/null
-#ssh-add -q ~/.ssh #TODO: does this work?
+#ssh-add -q ~/.ssh #TODO: does this work, or do I need to specify the file(s)? Maybe ~/.ssh/*.pub works.
 
-# cd to $HOME when sourcing #TODO: what about when starting a subshell?
+# cd to $HOME when sourcing
 cd
- 

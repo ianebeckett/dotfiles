@@ -8,4 +8,8 @@ Copy the SSH public key to your clipboard.
     $ cat ~/.ssh/id_ed25519.pub
 
 Then select and copy the contents of the id_ed25519.pub file
-displayed in the terminal to your clipboard
+displayed in the terminal to your clipboard.
+
+Test authentication:
+
+    $ ssh -T git@github.com

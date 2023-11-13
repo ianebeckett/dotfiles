@@ -1,5 +1,5 @@
 # runs in both interactive and non-interactive shells
-echo 'howdy from .zshenv'
+echo "\n howdy from .zshenv \n"
 
 # useful for conditional installs
 # command -v is like which, but returns exit status
