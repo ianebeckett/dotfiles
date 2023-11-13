@@ -1,3 +1,5 @@
+#! /usr/bin/env zsh
+
 #! #TODO: put zsh path in shebang
 # since most of this requires sudo, we can just run it with $ sudo ./setup_apt.zsh
 # sudo kept in commands here in case we want to limit the sudo scope to less than this whole file in the future
@@ -10,13 +12,6 @@ else
     echo 'setup_apt.zsh: TODO: put apt install script in setup_apt.zsh'
     #/bin/bash -c '$(curl -fsSL TODO: put apt URI here)'
 fi
-
-# set up nala
-
-# add nala repository
-echo "deb http://deb.volian.org/volian/ scar main" |
-sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list; wget -qO - https://deb.volian.org/volian/scar.key |
-sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg
 
 # install nala
 sudo apt update && sudo apt install nala

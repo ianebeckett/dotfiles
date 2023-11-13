@@ -1,3 +1,5 @@
+#! /usr/bin/env zsh
+
 # zshrc only loads in interactive shells
 # use ~/.dotfiles/zshenv to run commands in non-interactive shells
 echo "howdy from .zshrc \n"

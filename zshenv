@@ -1,3 +1,5 @@
+#! /usr/bin/env zsh
+
 # runs in both interactive and non-interactive shells
 echo "howdy from .zshenv \n"
 

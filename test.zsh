@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh #TODO: alter shebang so that it doesn't load .zshenv every time it's needed?
+#!/usr/bin/env zsh
 
 echo 'running test.zsh'
 

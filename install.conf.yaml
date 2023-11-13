@@ -1,5 +1,3 @@
-#TODO: see if dotbot is really needed. It could probaby be done with a shell script.
-#       check out other dotbot users to see if using dotbot is worth it before removing
 #run with $ sudo ~/.dotfiles./install
 # dotbot configuration, used by ~/.dotfiles/install
 # https://github.com/anishathalye/dotbot
@@ -24,7 +22,6 @@
     ~/.zsh_history:
     ~/.gitconfig:
     ~/.dircolors:
-    ~/.local:
 
 #TODO: handle "Commands within a task do not have a defined ordering".
 #TODO: move most of this to a bash/sh script? This would be less verbose and less reliant on dotbot
@@ -44,7 +41,6 @@
     command: git config --global user.name 'Ian Beckett'
     description: "configuring git user"
     quiet: true
-
   - 
     command: git config --global user.email '41558014+ianebeckett@users.noreply.github.com'
     quiet: true
