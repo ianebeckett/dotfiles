@@ -44,5 +44,10 @@
     ~/.local:
 
 - shell:
+  # separated out to minimize scope of -rf flags
+  #TODO: transfer this data to zsh before deleting?
+  #TODO: does bash recreate these before switching to zsh?
+  - command: rm ~/.bash_history
+  - command: rm -r ~/.bash_sessions #TODO: test that this works without -f
   - command: source ~/.zshrc
-  - description: dotbot complete. Starting a new shell with ~/.zshrc
+    - description: dotbot complete. Starting a new shell with ~/.zshrc
