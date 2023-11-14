@@ -14,21 +14,22 @@ export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 unsetopt BEEP
  
 # history #TODO: is this slowing my startup down?
-setopt HIST_IGNORE_ALL_DUPS SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS SHARE_HISTORY #TODO: stop ignoring dups?
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # aliases
 # use single quotes to preserve the string literal
-# bypass an alias with command foo
-
+# bypass an alias with command foo  
+alias ..='cd ..'
 alias gdb='gdb -quiet'
-
+alias grep='grep --color=auto'
+alias gs='git status'
 alias ls='ls -lFh --color=auto'
-
-# print $PATH, one per line
-alias path='<<<${(F)path}'
+alias path='<<<${(F)path}' # print $PATH, one per line
+alias mv='mv -i'
+alias rm='rm -i'
 
 # print contents after moving to given directory
 function cd() {
@@ -40,11 +41,24 @@ function cd() {
 #TODO: use eza instead of pipes?
 function ll() {
     { echo permissions links owner group size month date time name;
-        command ls -lAFh; # --color-auto can't be used here, since it's piped into column
+        command ls -lAFh; # --color-auto can't be used here, since it's piped into column # todo: does it work now that i've added grep --color=auto?
     } | 
     column -t |
     grep -v 'total' # remove total size of this directory from ls
 };
+
+# use nala instead of apt
+apt() { 
+  command nala "$@"
+}
+sudo() {
+  if [ "$1" = "apt" ]; then
+    shift
+    command sudo nala "$@"
+  else
+    command sudo "$@"
+  fi
+}
 
 # prompt customization
 
