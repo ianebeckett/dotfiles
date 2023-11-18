@@ -1,2 +1,6 @@
 # built font config files
 *.uuid
+
+# shell files
+zsh_history
+bash_history

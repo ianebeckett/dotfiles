@@ -1,4 +1,4 @@
-# in case I forget
+# in case you forget:
 Copy the SSH public key to your clipboard.
 
     If your SSH public key file has a different name than the example code,
