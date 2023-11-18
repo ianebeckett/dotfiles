@@ -20,44 +20,52 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # aliases
+
 # use single quotes to preserve the string literal
 # bypass an alias with command foo  
 alias ..='cd ..'
-alias gdb='gdb -quiet'
-alias grep='grep --color=auto'
-alias gs='git status'
+alias gdb='gdb -quiet' #TODO: change alias to accept args?
+alias gs='git status' #TODO: remove?
 alias ls='ls -lFh --color=auto'
+alias ll='ls -lAFh'
 alias path='<<<${(F)path}' # print $PATH, one per line
 alias mv='mv -i'
 alias rm='rm -i'
 
-# print contents after moving to given directory
-function cd() {
-    builtin cd $@
-    command ls -A --color=auto
-}
-
 # functions
-#TODO: use eza instead of pipes?
-function ll() {
-    { echo permissions links owner group size month date time name;
-        command ls -lAFh; # --color-auto can't be used here, since it's piped into column # todo: does it work now that i've added grep --color=auto?
-    } | 
-    column -t |
-    grep -v 'total' # remove total size of this directory from ls
-};
 
 # use nala instead of apt
 apt() { 
-  command nala "$@"
+    command nala "$@"
 }
+
+# print contents after moving to given directory
+function cd() {
+    builtin cd "$@" #TODO: quote "$@" for consistency? #TODO: builtin vs command?
+    ls -lFh --color=auto
+}
+
+# use VSCodium instead of Microsoft VS Code
+code() {
+    command codium "$@"
+}
+
+#TODO: use eza instead of pipes?
+#function ll() {
+#    { echo permissions links owner group size month date time name;
+#        command ls -lAFh; # --color-auto can't be used here, since it's piped into column # todo: does it work now that i've added grep --color=auto?
+#    } | 
+#    column -t |
+#    grep -v 'total' # remove total size of this directory from ls
+#};
+
 sudo() {
-  if [ "$1" = "apt" ]; then
-    shift
-    command sudo nala "$@"
-  else
-    command sudo "$@"
-  fi
+    if [ "$1" = "apt" ]; then
+        shift
+        command sudo nala "$@"
+    else
+        command sudo "$@"
+    fi
 }
 
 # prompt customization
@@ -90,3 +98,4 @@ export PATH=/usr/local/apache-maven-3.9.5/bin:$JAVA_HOME:$PATH
 
 # cd to $HOME when sourcing
 cd
+
