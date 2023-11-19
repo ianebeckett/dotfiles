@@ -1,10 +1,11 @@
 #! /usr/bin/env zsh
 
 # zshrc only loads in interactive shells
-# use ~/.dotfiles/zshenv to run commands in non-interactive shells
-echo "howdy from .zshrc \n"
+# use zshenv to run commands in non-interactive shells
+echo "howdy from .zshrc"
 
 # variables
+#TODO: move environment variables to zhsenv?
 # view system environment variables with env
 
 # use bat for man page syntax highlighting
@@ -12,7 +13,7 @@ export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
 # zsh options. see man zshoptions
 unsetopt BEEP
- 
+
 # history #TODO: is this slowing my startup down?
 setopt HIST_IGNORE_ALL_DUPS SHARE_HISTORY #TODO: stop ignoring dups?
 HISTSIZE=10000
@@ -41,7 +42,7 @@ apt() {
 
 # print contents after moving to given directory
 function cd() {
-    builtin cd "$@" #TODO: quote "$@" for consistency? #TODO: builtin vs command?
+    builtin cd "$@" #TODO: builtin vs command?
     ls -lFh --color=auto
 }
 
@@ -50,15 +51,7 @@ code() {
     command codium "$@"
 }
 
-#TODO: use eza instead of pipes?
-#function ll() {
-#    { echo permissions links owner group size month date time name;
-#        command ls -lAFh; # --color-auto can't be used here, since it's piped into column # todo: does it work now that i've added grep --color=auto?
-#    } | 
-#    column -t |
-#    grep -v 'total' # remove total size of this directory from ls
-#};
-
+# everything that is aliased and also needs sudo should have a branch in this sudo() function
 sudo() {
     if [ "$1" = "apt" ]; then
         shift
@@ -82,15 +75,12 @@ zstyle ':vcs_info:*' check-for-changes true # needed for %c
 zstyle ':vcs_info:*' unstagedstr '%F{1} *'
 zstyle ':vcs_info:*' formats '%F{green}[%s:%b%u%F{green}]%f' # style
 
-# precmd runs before every prompt. Use it to hot-update between commands
-precmd() {vcs_info} # run vcs_info as a pre-command
+# precmd runs after executing a command, before the next prompt is printed. Use it to hot-update between commands
+precmd() {
+    vcs_info
+}
 
 PROMPT='%F{24}[%n@%m$f %F{24}%~]%f${vcs_info_msg_0_}%(!.#.$) ' # %(!.#.%$) gives # if root else $. see zshmisc(1)
-
-# custom $PATH locations
-#TODO: stop duplicating elements in PATH
-export JAVA_HOME=/usr/lib/jvm/jdk-19
-export PATH=/usr/local/apache-maven-3.9.5/bin:$JAVA_HOME:$PATH
 
 # start ssh-agent (apparently, keyring already does this on ubuntu: $ ps -aux | grep ssh)
 #eval "$(ssh-agent -s)" > /dev/null
@@ -98,4 +88,3 @@ export PATH=/usr/local/apache-maven-3.9.5/bin:$JAVA_HOME:$PATH
 
 # cd to $HOME when sourcing
 cd
-

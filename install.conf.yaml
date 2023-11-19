@@ -1,4 +1,5 @@
-#run with $ sudo ~/.dotfiles./install
+# this script should be idempotent on a fully configured system
+# run with $ sudo ~/.dotfiles./install
 # dotbot configuration, used by ~/.dotfiles/install
 # https://github.com/anishathalye/dotbot
 
@@ -11,27 +12,17 @@
 
 #  - [git submodule update --init --recursive, Installing submodules] #TODO: where should we put this?
 
-# create symlinks to dotfiles
-# if the files already exists, its contents have to be moved first (?)
-#TODO: enable linking, even if local file already exists, without breaking things
-#TODO: what all do I want to move into ~/dotfiles? What should be left in ~?
-# ~/.foo is shorthand for ~./foo: ~/.dotfiles/foo
-- link:
-    ~/.zshrc:
-    ~/.zshenv:
-    ~/.zsh_history:
-    ~/.gitconfig:
-    ~/.dircolors:
-
 #TODO: handle "Commands within a task do not have a defined ordering".
 #TODO: move most of this to a bash/sh script? This would be less verbose and less reliant on dotbot
 #TODO: move command defaults to top once it's working (currently doesn't work)
 - shell:
   - 
-    command: sudo apt-get install -y zsh
+    command: sudo apt-get install -y zsh #apt-get preferred to apt for scripts
     description: "installing zsh"
     quiet: true
     stderr: true
+  - #attempt to set directory for zsh files before making them#TODO: test
+    command: export ZDOTDIR="$HOME/.config/zsh" #TODO: create this directory if it doesn't exist
   -   
     command: sudo chsh -s $(which zsh)
     description: "setting zsh as the default shell"
@@ -45,7 +36,6 @@
     command: git config --global user.email '41558014+ianebeckett@users.noreply.github.com'
     quiet: true
 
-#TODO: move stuff below this line to a separate script
 #TODO: fix automated font setup
 # preferred fonts: JetBrains Mono > Ubuntu Mono > Cascadia Mono > family: monospace
 # confirm font installed correctly by running fc-list | grep "<name-of-font>"
@@ -62,3 +52,19 @@
 #    quiet: true
 #    stdout: true
 #    stderr: true
+
+# create symlinks to dotfiles
+# if the files already exists, its contents have to be moved first (?)
+# ~/.foo is shorthand for ~./foo: ~/.dotfiles/foo
+
+#TODO; get rid of symlinks to zsh files after migrating them to config.zsh
+# problem: I want to keep my zshenv, zshrc, and some other config files in git via ~/.dotfiles,
+# but I don't want ~ to be cluttered with symlinks to dotfiles
+# solution: symlinks from $ZDOTDIR to ~/.dotfiles
+- link:
+    ~/.gitconfig:
+    ~/.dircolors:
+    ~/.zshrc:
+    ~/.zshenv:
+    ~/.zsh_history:
+
