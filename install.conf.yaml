@@ -5,14 +5,18 @@
 
 - defaults:
     link:
-      relink: false # dont replace pre-existing links
+      create: true
+      relink: true
       ignore-missing: true # creates link even if destination doesn't exist yet
 
 - clean: ['~'] # remove broken symlinks
 
 #  - [git submodule update --init --recursive, Installing submodules] #TODO: where should we put this?
 
-#TODO: handle "Commands within a task do not have a defined ordering".
+# create symlinks to dotfiles
+# if the files already exists, its contents have to be moved first (?)
+# ~/.foo is shorthand for ~./foo: ~/.dotfiles/foo
+
 #TODO: move most of this to a bash/sh script? This would be less verbose and less reliant on dotbot
 #TODO: move command defaults to top once it's working (currently doesn't work)
 - shell:
@@ -21,9 +25,8 @@
     description: "installing zsh"
     quiet: true
     stderr: true
-  - #attempt to set directory for zsh files before making them#TODO: test
-    command: export ZDOTDIR="$HOME/.config/zsh" #TODO: create this directory if it doesn't exist
-  -   
+  - export ZDOTDIR="$HOME/.config/zsh" #TODO: create this directory if it doesn't exist
+  -
     command: sudo chsh -s $(which zsh)
     description: "setting zsh as the default shell"
     quiet: true
@@ -53,18 +56,12 @@
 #    stdout: true
 #    stderr: true
 
-# create symlinks to dotfiles
-# if the files already exists, its contents have to be moved first (?)
-# ~/.foo is shorthand for ~./foo: ~/.dotfiles/foo
-
-#TODO; get rid of symlinks to zsh files after migrating them to config.zsh
 # problem: I want to keep my zshenv, zshrc, and some other config files in git via ~/.dotfiles,
 # but I don't want ~ to be cluttered with symlinks to dotfiles
 # solution: symlinks from $ZDOTDIR to ~/.dotfiles
 - link:
     ~/.gitconfig:
     ~/.dircolors:
-    ~/.zshrc:
-    ~/.zshenv:
-    ~/.zsh_history:
-
+    $ZDOTDIR/.zshrc:
+    $ZDOTDIR/.zshenv:
+    $ZDOTDIR/.zsh_history:  $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION

@@ -1,11 +1,11 @@
 #! /usr/bin/env zsh
 
-# zshrc only loads in interactive shells
-# use zshenv to run commands in non-interactive shells
+# zshrc only loads in interactive shells. This is the a good place to put things only relevant to interactive zsh shell usage
+# use zshenv to run commands in non-interactive shells.
+# this is also the most apt place for editing PATH
 echo "howdy from .zshrc"
 
 # variables
-#TODO: move environment variables to zhsenv?
 # view system environment variables with env
 
 # use bat for man page syntax highlighting
@@ -15,10 +15,10 @@ export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 unsetopt BEEP
 
 # history #TODO: is this slowing my startup down?
-setopt HIST_IGNORE_ALL_DUPS SHARE_HISTORY #TODO: stop ignoring dups?
+setopt SHARE_HISTORY
+HISTFILE="$XDG_STATE_HOME"/zsh/history
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.zsh_history
 
 # aliases
 
@@ -86,5 +86,6 @@ PROMPT='%F{24}[%n@%m$f %F{24}%~]%f${vcs_info_msg_0_}%(!.#.$) ' # %(!.#.%$) gives
 #eval "$(ssh-agent -s)" > /dev/null
 #ssh-add -q ~/.ssh #TODO: does this work, or do I need to specify the file(s)? Maybe ~/.ssh/*.pub works.
 
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 # cd to $HOME when sourcing
 cd
