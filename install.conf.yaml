@@ -5,9 +5,9 @@
 
 - defaults:
     link:
-      create: true
-      relink: true
-      ignore-missing: true # creates link even if destination doesn't exist yet
+        create: true
+        relink: true
+        ignore-missing: true # creates link even if destination doesn't exist yet
 
 - clean: ['~'] # remove broken symlinks
 
@@ -20,24 +20,32 @@
 #TODO: move most of this to a bash/sh script? This would be less verbose and less reliant on dotbot
 #TODO: move command defaults to top once it's working (currently doesn't work)
 - shell:
-  - 
-    command: sudo apt-get install -y zsh #apt-get preferred to apt for scripts
-    description: "installing zsh"
-    quiet: true
-    stderr: true
-  - export ZDOTDIR="$HOME/.config/zsh" #TODO: create this directory if it doesn't exist
-  -
-    command: sudo chsh -s $(which zsh)
-    description: "setting zsh as the default shell"
-    quiet: true
-    stderr: true
-  - 
-    command: git config --global user.name 'Ian Beckett'
-    description: "configuring git user"
-    quiet: true
-  - 
-    command: git config --global user.email '41558014+ianebeckett@users.noreply.github.com'
-    quiet: true
+    - 
+        command: sudo apt-get install -y zsh #apt-get preferred to apt for scripts
+        description: installing zsh
+        quiet: true
+        stderr: true
+    - 
+        command: export ZDOTDIR="$HOME/.config/zsh" #TODO: create this directory if it doesn't exist
+        description: setting zsh as the default shell
+        quiet: true
+    -
+        command: sudo chsh -s $(which zsh)
+        quiet: true
+        stderr: true
+    - 
+        command: git config --global user.name 'Ian Beckett'
+        description: configuring git
+        quiet: true
+    - 
+        command: git config --global user.email '41558014+ianebeckett@users.noreply.github.com'
+        quiet: true
+    - 
+        command: git config --global init.defaultBranch main
+        quiet: true
+    -
+        command: git config --global diff.colorMoved zebra
+        quiet: true
 
 #TODO: fix automated font setup
 # preferred fonts: JetBrains Mono > Ubuntu Mono > Cascadia Mono > family: monospace
@@ -57,11 +65,14 @@
 #    stderr: true
 
 # problem: I want to keep my zshenv, zshrc, and some other config files in git via ~/.dotfiles,
-# but I don't want ~ to be cluttered with symlinks to dotfiles
-# solution: symlinks from $ZDOTDIR to ~/.dotfiles
+# I want zshenv and zshrc to remain in $HOME, because it's easy to source them from there.
+# I also want them to exist in $ZDOTDIR
+# Finally, I want them to symlink to ~/.dotfiles, so I can track changes to them with git
 - link:
     ~/.gitconfig:
     ~/.dircolors:
-    $ZDOTDIR/.zshrc:
+    ~./zshenv:
+    ~./zshrc:
     $ZDOTDIR/.zshenv:
-    $ZDOTDIR/.zsh_history:  $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+    $ZDOTDIR/.zshrc:
+    $ZDOTDIR/history: $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION #TODO: fix; $ expansion not working

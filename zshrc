@@ -28,10 +28,12 @@ alias ..='cd ..'
 alias gdb='gdb -quiet' #TODO: change alias to accept args?
 alias gs='git status' #TODO: remove?
 alias ls='ls -lFh --color=auto'
+alias la='ls -lAFh'
 alias ll='ls -lAFh'
 alias path='<<<${(F)path}' # print $PATH, one per line
 alias mv='mv -i'
 alias rm='rm -i'
+alias mkdir="mkdir -p"
 
 # functions
 
@@ -86,6 +88,6 @@ PROMPT='%F{24}[%n@%m$f %F{24}%~]%f${vcs_info_msg_0_}%(!.#.$) ' # %(!.#.%$) gives
 #eval "$(ssh-agent -s)" > /dev/null
 #ssh-add -q ~/.ssh #TODO: does this work, or do I need to specify the file(s)? Maybe ~/.ssh/*.pub works.
 
-compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+#compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 # cd to $HOME when sourcing
 cd
