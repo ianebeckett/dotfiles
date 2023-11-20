@@ -71,8 +71,8 @@
 - link:
     ~/.gitconfig:
     ~/.dircolors:
-    ~./zshenv:
-    ~./zshrc:
+    ~/.zshenv:
+    ~/.zshrc:
     $ZDOTDIR/.zshenv:
     $ZDOTDIR/.zshrc:
     $ZDOTDIR/history: $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION #TODO: fix; $ expansion not working

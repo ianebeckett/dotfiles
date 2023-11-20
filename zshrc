@@ -83,6 +83,8 @@ precmd() {
 }
 
 PROMPT='%F{24}[%n@%m$f %F{24}%~]%f${vcs_info_msg_0_}%(!.#.$) ' # %(!.#.%$) gives # if root else $. see zshmisc(1)
+#path
+export PATH=/opt/apache-maven-3.9.5/bin:$PATH
 
 # start ssh-agent (apparently, keyring already does this on ubuntu: $ ps -aux | grep ssh)
 #eval "$(ssh-agent -s)" > /dev/null
