@@ -14,18 +14,17 @@ export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 # zsh options. see man zshoptions
 unsetopt BEEP
 
-# history #TODO: is this slowing my startup down?
+# history
 setopt SHARE_HISTORY
-HISTFILE="$XDG_STATE_HOME"/zsh/history
+HISTFILE="$XDG_STATE_HOME"/zsh/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
 # aliases
-
 # use single quotes to preserve the string literal
-# bypass an alias with command foo  
+# bypass an alias with command foo 
 alias ..='cd ..'
-alias gdb='gdb -quiet' #TODO: change alias to accept args?
+alias gdb='gdb -quiet' #TODO: change alias to function to accept args? Use cgdb?
 alias gs='git status' #TODO: remove?
 alias ls='ls -lFh --color=auto'
 alias la='ls -lAFh'
@@ -36,8 +35,7 @@ alias rm='rm -i'
 alias mkdir="mkdir -p"
 
 # functions
-
-# use nala instead of apt
+# subtitute nala for apt
 apt() { 
     command nala "$@"
 }
@@ -63,26 +61,23 @@ sudo() {
     fi
 }
 
-# prompt customization
+# precmd runs after executing a command, before the next prompt is printed. Use it to hot-update between commands
+precmd() {
+    vcs_info
+}
 
+# prompt customization
 # ls colors. for more info: dircolors -p, man dircolors
 eval $(dircolors -b ~/.dircolors)
-
 # git prompt
-# tokens: https://zsh.sourceforge.io/Doc/Release/User-Contributions.html#Version-Control-Information:~:text=In%20normal%20formats%20and%20actionformats%20the%20following%20replacements%20are%20done%3A
 autoload -Uz vcs_info # enable vcs_info
 setopt prompt_subst # allow prompt substitution
 zstyle ':vcs_info:*' enable git # save some time by only enabling git
 zstyle ':vcs_info:*' check-for-changes true # needed for %c
 zstyle ':vcs_info:*' unstagedstr '%F{1} *'
 zstyle ':vcs_info:*' formats '%F{green}[%s:%b%u%F{green}]%f' # style
-
-# precmd runs after executing a command, before the next prompt is printed. Use it to hot-update between commands
-precmd() {
-    vcs_info
-}
-
 PROMPT='%F{24}[%n@%m$f %F{24}%~]%f${vcs_info_msg_0_}%(!.#.$) ' # %(!.#.%$) gives # if root else $. see zshmisc(1)
+
 #path
 export PATH=/opt/apache-maven-3.9.5/bin:$PATH
 
@@ -90,6 +85,5 @@ export PATH=/opt/apache-maven-3.9.5/bin:$PATH
 #eval "$(ssh-agent -s)" > /dev/null
 #ssh-add -q ~/.ssh #TODO: does this work, or do I need to specify the file(s)? Maybe ~/.ssh/*.pub works.
 
-#compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
-# cd to $HOME when sourcing
-cd
+#compinit -d $XDG_CACHE_HOME/zsh/.zcompdump-$ZSH_VERSION
+

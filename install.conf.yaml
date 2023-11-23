@@ -8,14 +8,29 @@
         create: true
         relink: true
         ignore-missing: true # creates link even if destination doesn't exist yet
+#TODO: make shell defaults:
+# quiet: true
+# stderr: true
 
 - clean: ['~'] # remove broken symlinks
 
 #  - [git submodule update --init --recursive, Installing submodules] #TODO: where should we put this?
 
-# create symlinks to dotfiles
-# if the files already exists, its contents have to be moved first (?)
-# ~/.foo is shorthand for ~./foo: ~/.dotfiles/foo
+# link: create symlinks to dotfiles
+# TODO:if the file already exists, its contents have to be moved first (?)
+# ~/foo: is shorthand for ~/foo: ~/.dotfiles/foo, which in turn means to create a symlink at ~/foo, which points to the filepath ~/.dotfiles/foo.
+# CAUTION: this will makes linkes asumint the destination has unhidden file names. To keep the dot at the beginning, the dest muc be listed manually.
+# I want to keep .zshenv, .zshrc, and some other config files in ~/.dotfiles for version control and backup.
+# I want .zshenv and .zshrc to remain in $HOME, because it's easy to source them from there.
+# I also want them to exist in $ZDOTDIR, which should be set to $HOME/.config/zsh in accordance with XDG specifications.
+# The links to $ZDOTDIR won't work until after .zshenv is sourced, because that's where the export command lies.
+- link:
+    ~/.gitconfig: ~/.dotfiles/.gitconfig
+    ~/.zshenv: ~/.dotfiles/.zshenv
+    ~/.zshrc: ~/.dotfiles/.zshrc
+
+    # ~/.dircolors: ~/.dotfiles/.dircolors
+    # ~/history: $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION #TODO: fix; $ expansion not working
 
 #TODO: move most of this to a bash/sh script? This would be less verbose and less reliant on dotbot
 #TODO: move command defaults to top once it's working (currently doesn't work)
@@ -25,27 +40,36 @@
         description: installing zsh
         quiet: true
         stderr: true
-    - 
-        command: export ZDOTDIR="$HOME/.config/zsh" #TODO: create this directory if it doesn't exist
-        description: setting zsh as the default shell
-        quiet: true
     -
         command: sudo chsh -s $(which zsh)
+        description: setting zsh as the default shell
+        quiet: true
+        stderr: true
+    - 
+        command: git config --global init.defaultBranch main
         quiet: true
         stderr: true
     - 
         command: git config --global user.name 'Ian Beckett'
         description: configuring git
         quiet: true
+        stderr: true
     - 
         command: git config --global user.email '41558014+ianebeckett@users.noreply.github.com'
         quiet: true
-    - 
-        command: git config --global init.defaultBranch main
-        quiet: true
+        stderr: true
     -
         command: git config --global diff.colorMoved zebra
         quiet: true
+        stderr: true
+
+#TODO:  do all these in the right order:
+# mkdir # ~/.config/zsh
+# zshenv: export ZDOTDIR="$HOME/.config/zsh"
+# move .zcompdump to $ZDOTDIR
+# move .zsh_history to $ZDOTDIR (?)
+# link $ZDOTDIR/.zshenv to ~/.zshenv (or to ~/.dotfiles/.zshenv?)
+# link $ZDOTDIR/.zshrc to ~/.zshrc (or to ~/.dotfiles/.zshrc?)
 
 #TODO: fix automated font setup
 # preferred fonts: JetBrains Mono > Ubuntu Mono > Cascadia Mono > family: monospace
@@ -63,16 +87,3 @@
 #    quiet: true
 #    stdout: true
 #    stderr: true
-
-# problem: I want to keep my zshenv, zshrc, and some other config files in git via ~/.dotfiles,
-# I want zshenv and zshrc to remain in $HOME, because it's easy to source them from there.
-# I also want them to exist in $ZDOTDIR
-# Finally, I want them to symlink to ~/.dotfiles, so I can track changes to them with git
-- link:
-    ~/.gitconfig:
-    ~/.dircolors:
-    ~/.zshenv:
-    ~/.zshrc:
-    $ZDOTDIR/.zshenv:
-    $ZDOTDIR/.zshrc:
-    $ZDOTDIR/history: $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION #TODO: fix; $ expansion not working
