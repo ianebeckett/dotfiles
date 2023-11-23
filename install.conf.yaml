@@ -19,7 +19,7 @@
 # link: create symlinks to dotfiles
 # TODO:if the file already exists, its contents have to be moved first (?)
 # ~/foo: is shorthand for ~/foo: ~/.dotfiles/foo, which in turn means to create a symlink at ~/foo, which points to the filepath ~/.dotfiles/foo.
-# CAUTION: this will makes linkes asumint the destination has unhidden file names. To keep the dot at the beginning, the dest muc be listed manually.
+# CAUTION: this will makes links asuming the destination has unhidden file names. To keep the dot at the beginning, the dest muc be listed manually.
 # I want to keep .zshenv, .zshrc, and some other config files in ~/.dotfiles for version control and backup.
 # I want .zshenv and .zshrc to remain in $HOME, because it's easy to source them from there.
 # I also want them to exist in $ZDOTDIR, which should be set to $HOME/.config/zsh in accordance with XDG specifications.

@@ -68,15 +68,15 @@ precmd() {
 
 # prompt customization
 # ls colors. for more info: dircolors -p, man dircolors
-eval $(dircolors -b ~/.dircolors)
+# eval $(dircolors -b ~/.dircolors)
 # git prompt
+zstyle ':vcs_info:*' enable git # save some time by only enabling git
 autoload -Uz vcs_info # enable vcs_info
 setopt prompt_subst # allow prompt substitution
-zstyle ':vcs_info:*' enable git # save some time by only enabling git
 zstyle ':vcs_info:*' check-for-changes true # needed for %c
-zstyle ':vcs_info:*' unstagedstr '%F{1} *'
-zstyle ':vcs_info:*' formats '%F{green}[%s:%b%u%F{green}]%f' # style
-PROMPT='%F{24}[%n@%m$f %F{24}%~]%f${vcs_info_msg_0_}%(!.#.$) ' # %(!.#.%$) gives # if root else $. see zshmisc(1)
+zstyle ':vcs_info:*' unstagedstr '%F{1}*'
+zstyle ':vcs_info:*' formats '%F{green} (%s:%b%u%F{green})%f' # style
+PROMPT='%B%F{green}%n@%m%f:%F{blue}%~%f${vcs_info_msg_0_}%b%(!.#.$) ' # %(!.#.%$) gives # if root else $. see zshmisc(1)
 
 #path
 export PATH=/opt/apache-maven-3.9.5/bin:$PATH
