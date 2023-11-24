@@ -65,7 +65,9 @@
 
 #TODO:  do all these in the right order:
 # mkdir # ~/.config/zsh
-# zshenv: export ZDOTDIR="$HOME/.config/zsh"
+# make ZDOTDIR and XDG dirs
+# zshenv: export ZDOTDIR, XDG etc.
+# eg zshenv: export ZDOTDIR="$HOME/.config/zsh"
 # move .zcompdump to $ZDOTDIR
 # move .zsh_history to $ZDOTDIR (?)
 # link $ZDOTDIR/.zshenv to ~/.zshenv (or to ~/.dotfiles/.zshenv?)

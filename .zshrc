@@ -5,6 +5,9 @@
 # this is also the most apt place for editing PATH
 echo "howdy from .zshrc"
 
+# initialize autocompletion # Learn more: man zshcompsys
+autoload -U compinit && compinit
+
 # variables
 # view system environment variables with env
 
@@ -15,10 +18,14 @@ export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 unsetopt BEEP
 
 # history
+# to do: configure persistent autosuggestions form history across sessions.
+setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 HISTFILE="$XDG_STATE_HOME"/zsh/.zsh_history
 HISTSIZE=10000
-SAVEHIST=10000
+SAVEHIST=9999
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt EXTENDED_HISTORY
 
 # aliases
 # use single quotes to preserve the string literal
