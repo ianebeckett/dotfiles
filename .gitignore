@@ -4,3 +4,7 @@
 # shell files
 zsh_history
 bash_history
+
+# gnome state files
+.config/gnome-control-center/*
+

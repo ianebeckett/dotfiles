@@ -1,4 +1,4 @@
-#! /usr/bin/env zsh
+
 
 # zshrc only loads in interactive shells. This is the a good place to put things only relevant to interactive zsh shell usage
 # use zshenv to run commands in non-interactive shells.
@@ -45,6 +45,10 @@ alias mkdir="mkdir -p"
 # subtitute nala for apt
 apt() { 
     command nala "$@"
+}
+
+cat() {
+    command batcat "$@"
 }
 
 # print contents after moving to given directory
