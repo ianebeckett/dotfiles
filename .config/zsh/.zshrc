@@ -42,6 +42,10 @@ alias rm='rm -i'
 alias mkdir="mkdir -p"
 
 # functions
+# intellij idea
+idea() {
+    idea.sh "$@"
+}
 # subtitute nala for apt
 apt() { 
     command nala "$@"
@@ -93,6 +97,7 @@ PROMPT='%B%F{green}@%f: %F{blue}%~%f${vcs_info_msg_0_}%b %(!.#.$) '
 
 #path
 export PATH=/opt/apache-maven-3.9.5/bin:$PATH
+export PATH=/usr/local/lib/idea-IC-232.10227.8/bin:$PATH
 
 # start ssh-agent (apparently, keyring already does this on ubuntu: $ ps -aux | grep ssh)
 #eval "$(ssh-agent -s)" > /dev/null

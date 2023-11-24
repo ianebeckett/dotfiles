@@ -5,6 +5,8 @@
 zsh_history
 bash_history
 
-# gnome state files
+# configs 
 .config/gnome-control-center/*
+.config/gedit/*
+.config/pulse/*
 
