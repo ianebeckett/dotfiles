@@ -26,8 +26,8 @@
 # The links to $ZDOTDIR won't work until after .zshenv is sourced, because that's where the export command lies.
 - link:
     ~/.gitconfig: ~/.dotfiles/.gitconfig
-    ~/.zshenv: ~/.dotfiles/.zshenv
-    ~/.zshrc: ~/.dotfiles/.zshrc
+    ~/.zshenv: ~/.dotfiles/.config/zsh/.zshenv
+    ~/.zshrc: ~/.dotfiles/.config/zsh/.zshrc
 
     # ~/.dircolors: ~/.dotfiles/.dircolors
     # ~/history: $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION #TODO: fix; $ expansion not working
