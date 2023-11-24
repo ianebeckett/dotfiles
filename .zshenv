@@ -16,7 +16,7 @@ export LESSHISTFILE="-"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
-export ZDOTDIR="$HOME/.config/zsh"
+export ZDOTDIR="$HOME/.config/zsh" #TODO: ensure that this isn't makin a dir with all file permissions
 
 # command -v is like which, but returns exit status
 # useful for conditional installs

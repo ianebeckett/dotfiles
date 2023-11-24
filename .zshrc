@@ -75,8 +75,10 @@ autoload -Uz vcs_info # enable vcs_info
 setopt prompt_subst # allow prompt substitution
 zstyle ':vcs_info:*' check-for-changes true # needed for %c
 zstyle ':vcs_info:*' unstagedstr '%F{1}*'
-zstyle ':vcs_info:*' formats '%F{green} (%s:%b%u%F{green})%f' # style
-PROMPT='%B%F{green}%n@%m%f:%F{blue}%~%f${vcs_info_msg_0_}%b%(!.#.$) ' # %(!.#.%$) gives # if root else $. see zshmisc(1)
+#  we don't need '%s:' unless we're using multiple vcs. I only use git, so it's just clutter.
+zstyle ':vcs_info:*' formats '%F{green} (%b%u%F{green})%f' # style
+# user@host (%n@%m) is unnecessary; on the rare occasion that we need to check those variables, we can just echo $USER @ $HOST
+PROMPT='%B%F{green}@%f: %F{blue}%~%f${vcs_info_msg_0_}%b %(!.#.$) '
 
 #path
 export PATH=/opt/apache-maven-3.9.5/bin:$PATH
@@ -87,3 +89,5 @@ export PATH=/opt/apache-maven-3.9.5/bin:$PATH
 
 #compinit -d $XDG_CACHE_HOME/zsh/.zcompdump-$ZSH_VERSION
 
+#plugins
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
