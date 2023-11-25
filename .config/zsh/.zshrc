@@ -3,7 +3,7 @@
 # zshrc only loads in interactive shells. This is the a good place to put things only relevant to interactive zsh shell usage
 # use zshenv to run commands in non-interactive shells.
 # this is also the most apt place for editing PATH
-echo "howdy from .zshrc"
+#echo "howdy from .zshrc"
 
 # initialize autocompletion # Learn more: man zshcompsys
 autoload -U compinit && compinit

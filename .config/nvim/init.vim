@@ -7,6 +7,12 @@ set shiftwidth=4
 set expandtab
 set smartindent
 
+" plugins
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
 colorscheme desert
 
 let mapleader = " "
