@@ -30,4 +30,8 @@ let mapleader = " "
 nnoremap <leader>pv :Vex<CR>
 " shoutout aka source init.vim
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+"fuzzy-find git repo files in current directory 
+nnoremap <C-p> :GFiles<CR> 
+"fuzzy-find files in current directory
+nnoremap <leader>pf :Files<CR> 
 
