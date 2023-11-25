@@ -6,7 +6,10 @@ zsh_history
 bash_history
 
 # configs 
-.config/gnome-control-center/*
-.config/gedit/*
-.config/pulse/*
+.config/gnome*
+.config/gedit
+.config/pulse
+.config/JetBrains
+.config/evolution
+.config/cef_user_data
 
