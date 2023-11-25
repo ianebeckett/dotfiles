@@ -6,4 +6,21 @@ set shiftwidth=4
 set expandtab
 set smartindent
 
-colorscheme elflord
+colorscheme desert
+
+let mapleader = " "
+" note: keep remaps no more than 3 keys
+" note: even if removed, remapped commands last for the life of the vim
+"   session
+" note: vim allows about 1sec before executing a command, just in case it's a
+" prefix of a remap. This should be circumvented by using a key that is rare or special
+" for command mode as <leader>, e.g. space (we should be using l to progress the cursor)
+" custom remap example: <leader>pv
+" modes: n, v, i, c, t, etc.
+" nore: no recursive execution
+" map <leader> i.e. space pv to perform :Vex
+" :Vex does a vertical exploratory split
+nnoremap <leader>pv :Vex<CR>
+" shoutout aka source init.vim
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+

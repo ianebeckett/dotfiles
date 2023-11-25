@@ -5,3 +5,5 @@
 	email = 41558014+ianebeckett@users.noreply.github.com
 [diff]
 	colorMoved = zebra
+[core]
+	editor = vim
