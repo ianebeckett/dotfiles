@@ -12,4 +12,7 @@ bash_history
 .config/JetBrains
 .config/evolution
 .config/cef_user_data
+.config/VSCodium
+.config/libreoffice
 
+local/share
