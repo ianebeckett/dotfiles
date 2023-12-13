@@ -15,9 +15,10 @@ bash_history
 .config/VSCodium
 .config/libreoffice
 .config/dconf
-.config/mimeapps
+.config/mimeapps.list
 .config/nautilus
 .config/vlc
+.config/evince
 
 local/share
 local/state
