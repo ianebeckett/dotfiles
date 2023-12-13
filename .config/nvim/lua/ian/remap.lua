@@ -33,13 +33,6 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>") 
 
--- window movement
---TODO: these don't seem to work.
---vim.keymap.set("n", "<C-h>", "<C-w>h")
---vim.keymap.set("n", "<C-j>", "<C-w>j")
---vim.keymap.set("n", "<C-k>", "<C-w>k")
---vim.keymap.set("n", "<C-l>", "<C-w>l")
-
 vim.keymap.set("n", "<leader>f", function()
     vim.lsp.buf.format()
 end)

@@ -19,6 +19,8 @@ bash_history
 .config/nautilus
 .config/vlc
 .config/evince
+.config/totem
+.config/eog
 
 local/share
 local/state
