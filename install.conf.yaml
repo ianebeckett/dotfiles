@@ -28,6 +28,7 @@
     ~/.gitconfig: ~/.dotfiles/.gitconfig
     ~/.zshenv: ~/.dotfiles/.config/zsh/.zshenv
     ~/.zshrc: ~/.dotfiles/.config/zsh/.zshrc
+    ~/.vimrc: ~/.dotfiles/.config/nvim/init.vim
 
     # ~/.dircolors: ~/.dotfiles/.dircolors
     # ~/history: $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION #TODO: fix; $ expansion not working

@@ -14,5 +14,10 @@ bash_history
 .config/cef_user_data
 .config/VSCodium
 .config/libreoffice
+.config/dconf
+.config/mimeapps
+.config/nautilus
+.config/vlc
 
 local/share
+local/state

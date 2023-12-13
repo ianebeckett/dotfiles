@@ -78,8 +78,13 @@ sudo() {
 
 # precmd runs after executing a command, before the next prompt is printed. Use it to hot-update between commands
 precmd() {
+    print -Pn "\e]0;%~\a";
     vcs_info
 }
+
+# terminal emulator tab title
+DISABLE_AUTO_TITLE="true"
+PROMPT_COMMAND='echo -en "\033]0; $("pwd") \a"'
 
 # prompt customization
 # ls colors. for more info: dircolors -p, man dircolors
@@ -107,3 +112,5 @@ export PATH=/usr/local/lib/idea-IC-232.10227.8/bin:$PATH
 
 #plugins
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+ls
