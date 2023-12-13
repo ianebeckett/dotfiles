@@ -28,7 +28,6 @@
     ~/.gitconfig: ~/.dotfiles/.gitconfig
     ~/.zshenv: ~/.dotfiles/.config/zsh/.zshenv
     ~/.zshrc: ~/.dotfiles/.config/zsh/.zshrc
-    ~/.vimrc: ~/.dotfiles/.config/nvim/init.vim
 
     # ~/.dircolors: ~/.dotfiles/.dircolors
     # ~/history: $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION #TODO: fix; $ expansion not working
@@ -59,10 +58,10 @@
         command: git config --global user.email '41558014+ianebeckett@users.noreply.github.com'
         quiet: true
         stderr: true
-    -
-        command: git config --global diff.colorMoved zebra
-        quiet: true
-        stderr: true
+          #    -
+          #        command: git config --global diff.colorMoved zebra
+          #        quiet: true
+          #        stderr: true
 
 #TODO:  do all these in the right order:
 # mkdir # ~/.config/zsh
