@@ -55,7 +55,7 @@
         quiet: true
         stderr: true
     - 
-        command: git config --global user.email '41558014+ianebeckett@users.noreply.github.com'
+        command: git config --global user.email 'redacted'
         quiet: true
         stderr: true
           #    -
