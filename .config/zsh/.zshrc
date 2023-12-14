@@ -5,7 +5,7 @@
 # this is also the most apt place for editing PATH
 #echo "howdy from .zshrc"
 
-# initialize autocompletion # Learn more: man zshcompsys
+# initialize autocompletion
 autoload -U compinit && compinit
 
 # variables
@@ -18,7 +18,7 @@ export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 unsetopt BEEP
 
 # history
-# to do: configure persistent autosuggestions form history across sessions.
+# TODO: configure persistent autosuggestions from history across sessions.
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 HISTFILE="$XDG_STATE_HOME"/zsh/.zsh_history
@@ -32,7 +32,7 @@ setopt EXTENDED_HISTORY
 # bypass an alias with command foo 
 alias ..='cd ..'
 alias gdb='gdb -quiet' #TODO: change alias to function to accept args? Use cgdb?
-alias gs='git status' #TODO: remove?
+alias gs='git status'
 alias ls='ls -lFh --color=auto'
 alias la='ls -lAFh'
 alias ll='ls -lAFh'
