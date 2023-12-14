@@ -1,6 +1,6 @@
 --we place plugin-specific remaps in their respective "after/plugin/foo.lua" 
 
-vim.keymap.set("n", "<leader><CR>", vim.cmd.so("~/.config/nvim/init.lua"))
+vim.keymap.set("n", "<leader><CR>", vim.cmd.so)
 
 --netrw window management
 vim.keymap.set("n", "<leader>nw", vim.cmd.Ex) --"new" window, or "NetrW"
