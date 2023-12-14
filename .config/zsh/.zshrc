@@ -1,12 +1,13 @@
-
-
-# zshrc only loads in interactive shells. This is the a good place to put things only relevant to interactive zsh shell usage
+# zshrc only loads in interactive shells. This is the a good place to put
+# things only relevant to interactive zsh shell usage
 # use zshenv to run commands in non-interactive shells.
 # this is also the most apt place for editing PATH
+
 #echo "howdy from .zshrc"
 
-# initialize autocompletion
-autoload -U compinit && compinit
+# initialize zsh compsys
+. /home/ian/.config/zsh
+autoload -U compinit && compinit -d $XDG_CACHE_HOME/zsh/.zcompdump-$ZSH_VERSION
 
 # variables
 # view system environment variables with env
@@ -35,10 +36,11 @@ alias gdb='gdb -quiet' #TODO: change alias to function to accept args? Use cgdb?
 alias gs='git status'
 alias ls='ls -lFh --color=auto'
 alias la='ls -lAFh'
-alias ll='ls -lAFh'
+# removed ll to minimize double-pressing with same finger
+# it was ths same as ls, anyway
 alias path='<<<${(F)path}' # print $PATH, one per line
 alias mv='mv -i'
-alias rm='rm -i'
+alias rm='rm -I'
 alias mkdir="mkdir -p"
 
 # functions
@@ -76,7 +78,8 @@ sudo() {
     fi
 }
 
-# precmd runs after executing a command, before the next prompt is printed. Use it to hot-update between commands
+# precmd runs after executing a command, before the next prompt is printed
+# there is also preexec
 precmd() {
     print -Pn "\e]0;%~\a";
     vcs_info
@@ -95,20 +98,21 @@ autoload -Uz vcs_info # enable vcs_info
 setopt prompt_subst # allow prompt substitution
 zstyle ':vcs_info:*' check-for-changes true # needed for %c
 zstyle ':vcs_info:*' unstagedstr '%F{1}*'
-#  we don't need '%s:' unless we're using multiple vcs. I only use git, so it's just clutter.
+#  we don't need '%s:' unless we're using multiple vcs.
+#  I only use git, so it's just clutter.
 zstyle ':vcs_info:*' formats '%F{green} (%b%u%F{green})%f' # style
-# user@host (%n@%m) is unnecessary; on the rare occasion that we need to check those variables, we can just echo $USER @ $HOST
+# user@host (%n@%m) is unnecessary; on the rare occasion that we need to check
+# those variables, we can just echo $USER @ $HOST
 PROMPT='%B%F{green}@%f: %F{blue}%~%f${vcs_info_msg_0_}%b %(!.#.$) '
 
 #path
 export PATH=/opt/apache-maven-3.9.5/bin:$PATH
 export PATH=/usr/local/lib/idea-IC-232.10227.8/bin:$PATH
 
-# start ssh-agent (apparently, keyring already does this on ubuntu: $ ps -aux | grep ssh)
+# start ssh-agent (keyring already does this on ubuntu: $ ps -aux | grep ssh)
 #eval "$(ssh-agent -s)" > /dev/null
-#ssh-add -q ~/.ssh #TODO: does this work, or do I need to specify the file(s)? Maybe ~/.ssh/*.pub works.
-
-#compinit -d $XDG_CACHE_HOME/zsh/.zcompdump-$ZSH_VERSION
+# ssh-add -q ~/.ssh #TODO: does this work, or do I need to specify the file(s)?
+# Maybe ~/.ssh/*.pub works.
 
 #plugins
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
