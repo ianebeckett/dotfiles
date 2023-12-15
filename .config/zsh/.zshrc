@@ -6,7 +6,6 @@
 #echo "howdy from .zshrc"
 
 # initialize zsh compsys
-. /home/ian/.config/zsh
 autoload -U compinit && compinit -d $XDG_CACHE_HOME/zsh/.zcompdump-$ZSH_VERSION
 
 # variables
@@ -28,6 +27,8 @@ SAVEHIST=9999
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
 
+# path
+
 # aliases
 # use single quotes to preserve the string literal
 # bypass an alias with command foo 
@@ -48,10 +49,6 @@ alias mkdir="mkdir -p"
 idea() {
     idea.sh "$@"
 }
-# subtitute nala for apt
-apt() { 
-    command nala "$@"
-}
 
 cat() {
     command batcat "$@"
@@ -68,26 +65,12 @@ code() {
     command codium "$@"
 }
 
-# everything that is aliased and also needs sudo should have a branch in this sudo() function
-sudo() {
-    if [ "$1" = "apt" ]; then
-        shift
-        command sudo nala "$@"
-    else
-        command sudo "$@"
-    fi
-}
-
 # precmd runs after executing a command, before the next prompt is printed
 # there is also preexec
 precmd() {
     print -Pn "\e]0;%~\a";
     vcs_info
 }
-
-# terminal emulator tab title
-DISABLE_AUTO_TITLE="true"
-PROMPT_COMMAND='echo -en "\033]0; $("pwd") \a"'
 
 # prompt customization
 # ls colors. for more info: dircolors -p, man dircolors
@@ -104,10 +87,6 @@ zstyle ':vcs_info:*' formats '%F{green} (%b%u%F{green})%f' # style
 # user@host (%n@%m) is unnecessary; on the rare occasion that we need to check
 # those variables, we can just echo $USER @ $HOST
 PROMPT='%B%F{green}@%f: %F{blue}%~%f${vcs_info_msg_0_}%b %(!.#.$) '
-
-#path
-export PATH=/opt/apache-maven-3.9.5/bin:$PATH
-export PATH=/usr/local/lib/idea-IC-232.10227.8/bin:$PATH
 
 # start ssh-agent (keyring already does this on ubuntu: $ ps -aux | grep ssh)
 #eval "$(ssh-agent -s)" > /dev/null

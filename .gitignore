@@ -21,6 +21,9 @@ bash_history
 .config/evince
 .config/totem
 .config/eog
+.config/ibus
+.config/pavucontrol.ini
+.config/yelp
 
 local/share
 local/state
