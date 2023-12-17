@@ -42,3 +42,7 @@ vim.diagnostic.config({
     }
 })
 
+--netrw settings
+vim.g.netrw_banner = 0 -- hidden
+--vim.g.netrw_liststyle = 3 -- tree, useful for seeing the shape of new projects
+
