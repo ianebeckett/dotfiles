@@ -96,4 +96,4 @@ PROMPT='%B%F{green}@%f: %F{blue}%~%f${vcs_info_msg_0_}%b %(!.#.$) '
 #plugins
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-ls
+tmux

@@ -24,6 +24,7 @@ bash_history
 .config/ibus
 .config/pavucontrol.ini
 .config/yelp
+.config/ibus
 
 local/share
-local/state
+~/.local/state

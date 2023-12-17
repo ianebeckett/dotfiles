@@ -1,7 +1,22 @@
+local telescope = require('telescope')
+local actions = require('telescope.actions')
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>sf', builtin.find_files, {}) --search files
-vim.keymap.set('n', '<leader>sg', builtin.git_files, {}) --search git
-vim.keymap.set('n', '<leader>sp', function() --search project
-	builtin.grep_string({ search = vim.fn.input("Grep > ") });
-end)
 
+telescope.setup {
+    defaults = {
+        mappings = {
+            i = {
+                ["<C-k>"] = actions.move_selection_previous,
+                ["<C-j>"] = actions.move_selection_next,
+                ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist
+            } } }
+}
+
+vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = "find files in cwd" })
+vim.keymap.set('n', '<leader>gf', builtin.live_grep, { desc = "grep files in cwd for string" })
+vim.keymap.set('n', '<leader>sg', builtin.git_files, { desc = "find files in git repo" })
+
+--is this the same as live_grep?
+--vim.keymap.set('n', '<leader>gf', function()
+--    builtin.grep_string({ search = vim.fn.input("Grep > ") })
+--end)
