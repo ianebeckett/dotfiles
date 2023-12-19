@@ -48,5 +48,7 @@ vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<left><left>
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<cr>", { silent = true })
 
 --tmux
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<cr>", { silent = true })
+--TODO: write tmux-sessionizer and alias neww=new-window
+--TODO: remap this?
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 

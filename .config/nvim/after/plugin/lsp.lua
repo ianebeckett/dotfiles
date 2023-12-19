@@ -3,8 +3,6 @@ local lsp = require('lsp-zero')
 local mason = require('mason')
 local mason_lspconfig = require('mason-lspconfig')
 
-vim.g.lsp_zero_ui_signcolumn = 0
-
 lsp.preset({
     float_border = 'rounded',
     call_servers = 'local',
