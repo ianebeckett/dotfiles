@@ -14,7 +14,6 @@ autoload -U compinit && compinit -d $XDG_CACHE_HOME/zsh/.zcompdump-$ZSH_VERSION
 # use bat for man page syntax highlighting
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
-# zsh options. see man zshoptions
 unsetopt BEEP
 
 # history
@@ -28,6 +27,7 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
 
 # path
+export PATH=~/scripts:$PATH
 
 # aliases
 # use single quotes to preserve the string literal
@@ -37,12 +37,21 @@ alias gdb='gdb -quiet' #TODO: change alias to function to accept args? Use cgdb?
 alias gs='git status'
 alias ls='ls -lh --color=auto'
 alias la='ls -lAh'
-# removed ll to minimize double-pressing with same finger
-# it was ths same as ls, anyway
 alias path='<<<${(F)path}' # print $PATH, one per line
 alias mv='mv -i'
 alias rm='rm -I'
 alias mkdir="mkdir -p"
+
+# TODO: integrate tmux windowizer to exec vim from the parent directory so harpoon remembers list
+# TODO: change paths to be via $DOTFILES, as opposed to symlinks, to enable fugitive
+alias ezsh="vim $ZDOTDIR"
+alias evim="vim $XDG_CONFIG_HOME/nvim"
+#alias ei3="vim $XDG_CONFIG_HOME/i3"
+#alias eterm="vim $XDG_CONFIG_HOME/xterm"
+#alias etmux="vim $XDG_CONFIG_HOME/tmux.conf"
+
+#alias study=
+#alias work=
 
 # functions
 # intellij idea
@@ -54,13 +63,11 @@ cat() {
     command batcat "$@"
 }
 
-# print contents after moving to given directory
 function cd() {
     builtin cd "$@" #TODO: builtin vs command?
     ls -lh --color=auto
 }
 
-# use VSCodium instead of Microsoft VS Code
 code() {
     command codium "$@"
 }
@@ -81,8 +88,7 @@ autoload -Uz vcs_info # enable vcs_info
 setopt prompt_subst # allow prompt substitution
 zstyle ':vcs_info:*' check-for-changes true # needed for %c
 zstyle ':vcs_info:*' unstagedstr '%F{1}*'
-#  we don't need '%s:' unless we're using multiple vcs.
-#  I only use git, so it's just clutter.
+#  we don't need '%s:' unless we're using multiple vcs. I only use git, so it's just clutter.
 zstyle ':vcs_info:*' formats '%F{green} (%b%u%F{green})%f' # style
 # user@host (%n@%m) is unnecessary; on the rare occasion that we need to check
 # those variables, we can just echo $USER @ $HOST
