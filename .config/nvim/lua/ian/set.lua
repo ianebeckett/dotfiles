@@ -46,3 +46,10 @@ vim.diagnostic.config({
 vim.g.netrw_banner = 0 -- hidden
 --vim.g.netrw_liststyle = 3 -- tree, useful for seeing the shape of new projects
 
+--bracket expansion
+--inoremap (; (<CR>);<C-c>O
+--inoremap (, (<CR>),<C-c>O
+--inoremap {; {<CR>};<C-c>O
+--inoremap {, {<CR>},<C-c>O
+--inoremap [; [<CR>];<C-c>O
+--inoremap [, [<CR>],<C-c>O
