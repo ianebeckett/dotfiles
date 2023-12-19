@@ -35,8 +35,8 @@ setopt EXTENDED_HISTORY
 alias ..='cd ..'
 alias gdb='gdb -quiet' #TODO: change alias to function to accept args? Use cgdb?
 alias gs='git status'
-alias ls='ls -lFh --color=auto'
-alias la='ls -lAFh'
+alias ls='ls -lh --color=auto'
+alias la='ls -lAh'
 # removed ll to minimize double-pressing with same finger
 # it was ths same as ls, anyway
 alias path='<<<${(F)path}' # print $PATH, one per line
@@ -57,7 +57,7 @@ cat() {
 # print contents after moving to given directory
 function cd() {
     builtin cd "$@" #TODO: builtin vs command?
-    ls -lFh --color=auto
+    ls -lh --color=auto
 }
 
 # use VSCodium instead of Microsoft VS Code
