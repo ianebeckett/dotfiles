@@ -6,24 +6,30 @@ zsh_history
 bash_history
 
 # configs 
-.config/gnome*
-.config/gedit
-.config/pulse
-.config/JetBrains
-.config/evolution
 .config/cef_user_data
+.config/dconf
+.config/eog
+.config/evince
+.config/evolution
+.config/gedit
+.config/GIMP
+.config/gnome*
+.config/gtk*
+.config/ibus
+.config/JetBrains
 .config/VSCodium
 .config/libreoffice
-.config/dconf
 .config/mimeapps.list
 .config/nautilus
-.config/vlc
-.config/evince
-.config/totem
-.config/eog
-.config/ibus
 .config/pavucontrol.ini
+.config/pulse
+.config/totem
+.config/vlc
 .config/yelp
 
-local/share
-~/.local/state
+# machine-local files
+local
+# why do I have both local and .local?
+.local
+~/.local
+
