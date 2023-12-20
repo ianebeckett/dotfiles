@@ -1,0 +1,22 @@
+# bypass an alias with command foo 
+alias ..='cd ..'
+alias gdb='gdb -quiet' #TODO: change alias to function to accept args? Use cgdb?
+alias gs='git status'
+alias ls='ls -lh --color=auto'
+alias la='ls -lAh'
+alias path='<<<${(F)path}' # print $PATH, one per line
+alias mv='mv -i'
+alias rm='rm -I'
+alias mkdir="mkdir -p"
+
+# TODO: integrate tmux windowizer to exec vim from the parent directory so harpoon remembers list
+# TODO: change paths to be via $DOTFILES, as opposed to symlinks, to enable fugitive with the aliases
+alias ezsh="vim $ZDOTDIR"
+alias evim="vim $XDG_CONFIG_HOME/nvim"
+#alias ei3="vim $XDG_CONFIG_HOME/i3"
+#alias eterm="vim $XDG_CONFIG_HOME/xterm"
+#alias etmux="vim $XDG_CONFIG_HOME/tmux.conf"
+
+#alias study=
+#alias work=
+
