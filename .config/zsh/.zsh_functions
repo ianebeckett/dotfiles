@@ -7,6 +7,11 @@ cd() {
     ls -lh --color=auto
 }
 
+# generate compile_commands.json for clangd
+cmake() {
+    command cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 "$@" 
+}
+
 code() {
     command codium "$@"
 }
