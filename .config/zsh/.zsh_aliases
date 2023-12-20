@@ -2,8 +2,8 @@
 alias ..='cd ..'
 alias gdb='gdb -quiet' #TODO: change alias to function to accept args? Use cgdb?
 alias gs='git status'
-alias ls='ls -lh --color=auto'
-alias la='ls -lAh'
+alias ls='ls -lh --color=auto --format=single-column'
+alias la='ls -lha'
 alias path='<<<${(F)path}' # print $PATH, one per line
 alias mv='mv -i'
 alias rm='rm -I'
