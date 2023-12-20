@@ -19,15 +19,17 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
+    --install these lsps automatically 
     ensure_installed = {
         'clangd',
         'cssls',
         'html',
         'lua_ls',
     },
+    --allow lsp_zero to set default configuration settings for every lsp
+    --without this handler, we would have to require('lspconfig').[server].setup({}) for every server.
     handlers = {
         lsp_zero.default_setup,
     },
 })
 
-require'lspconfig'.clangd.setup{}
