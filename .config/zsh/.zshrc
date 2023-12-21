@@ -16,7 +16,7 @@ SAVEHIST=9999
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
 
-addToPath "~/scripts"
+# addToPathFront "~/scripts"
 source $ZDOTDIR/.zsh_aliases
 source $ZDOTDIR/.zsh_functions
 
