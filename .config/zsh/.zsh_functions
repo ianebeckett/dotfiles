@@ -7,6 +7,7 @@ cd() {
     ls
 }
 
+# beware infinite loops when failing to use command foo in function foo()
 # generate compile_commands.json for clangd
 cmake() {
     command cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 "$@" 
@@ -19,5 +20,9 @@ code() {
 # intellij idea
 idea() {
     idea.sh "$@"
+}
+
+info() {
+    command info --vi-keys --subnodes $@
 }
 

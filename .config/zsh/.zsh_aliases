@@ -1,8 +1,7 @@
-# bypass an alias with command foo 
-alias ..='cd ..'
+alias python="python3"
 alias gdb='gdb -quiet' #TODO: change alias to function to accept args? Use cgdb?
 alias gs='git status'
-alias ls='ls -lh --color=auto --format=single-column'
+alias ls='ls -lh --color=auto --group-directories-first --format=single-column'
 alias la='ls -lha'
 alias path='<<<${(F)path}' # print $PATH, one per line
 alias mv='mv -i'
