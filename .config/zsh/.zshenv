@@ -1,4 +1,4 @@
-#! /usr/bin/env zsh
+#!/usr/bin/env zsh
 
 # runs in both interactive and non-interactive shells
 # CAUTION: other zsh files are sourced after zshenv, and could overwrite these settings
@@ -20,8 +20,19 @@ export XDG_STATE_HOME="$HOME/.local/state"
 #store user-specific executables in ~/.local/bin
 export ZDOTDIR="$HOME/.config/zsh" #TODO: ensure that this isn't making a dir with all file permissions
 
-# command -v is like which, but returns exit status
-# useful for conditional installs
-function exists() {
+exists() {
     command -v $1 > /dev/null 2>&1
 }
+
+addToPath() {
+    if ! $(echo "$PATH" | tr ":" "\n" | grep -qx "$1") ; then
+        PATH=$PATH:$1 ;
+    fi
+}
+
+addToPathFront() {
+    if ! $(echo "$PATH" | tr ":" "\n" | grep -qx "$1") ; then
+        PATH=$1:$PATH ;
+    fi
+}
+

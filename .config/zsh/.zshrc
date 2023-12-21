@@ -16,10 +16,9 @@ SAVEHIST=9999
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
 
-export PATH=~/scripts:$PATH
-
-. $ZDOTDIR/.zsh_aliases
-. $ZDOTDIR/.zsh_functions
+addToPath "~/scripts"
+source $ZDOTDIR/.zsh_aliases
+source $ZDOTDIR/.zsh_functions
 
 # precmd runs after executing a command, before the next prompt is printed
 # there is also preexec

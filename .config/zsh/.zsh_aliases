@@ -1,8 +1,8 @@
 alias python="python3"
-alias gdb='gdb -quiet' #TODO: change alias to function to accept args? Use cgdb?
+alias gdb='gdb -quiet' #use cgdb?
 alias gs='git status'
 alias ls='ls -lh --color=auto --group-directories-first --format=single-column'
-alias la='ls -lha'
+alias la='command ls -lha --color=auto --group-directories-first' # aliases are recursive
 alias path='<<<${(F)path}' # print $PATH, one per line
 alias mv='mv -i'
 alias rm='rm -I'
