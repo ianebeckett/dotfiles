@@ -26,3 +26,18 @@ info() {
     command info --vi-keys --subnodes $@
 }
 
+# remove/install google play store
+# can also do enable, disable. does this remove them from home screen?
+# check connected: adb devices
+# view packages: adb shell pm list packages
+# TODO: generalize this to other apps? web browser, ...
+
+removeGooglePlay() {
+    adb shell pm uninstall -k --user 0 com.android.vending
+}
+
+# you may need to reset the app to factory settings and reboot before it can update or install anything
+restoreGooglePlay() {
+    adb shell pm install-existing com.android.vending
+}
+
