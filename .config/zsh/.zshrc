@@ -16,9 +16,10 @@ SAVEHIST=9999
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
 
-# addToPathFront "~/scripts"
 source $ZDOTDIR/.zsh_aliases
 source $ZDOTDIR/.zsh_functions
+
+bindkey -s ^f "tmux-sessionizer\n"
 
 # precmd runs after executing a command, before the next prompt is printed
 # there is also preexec
