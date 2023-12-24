@@ -1,26 +1,29 @@
 #echo "howdy from .zshrc"
 
-# initialize zsh compsys
-autoload -U compinit && compinit -d $XDG_CACHE_HOME/zsh/.zcompdump-$ZSH_VERSION
-
-export MANPAGER="sh -c 'col -bx | batcat -l man -p'" # use bat for man page syntax highlighting
-
 unsetopt BEEP
 
-# TODO: configure persistent autosuggestions from history across sessions.
-setopt APPEND_HISTORY
-setopt SHARE_HISTORY
-HISTFILE="$XDG_STATE_HOME"/zsh/.zsh_history
+mkdir -p $XDG_CACHE_HOME/zsh
+touch $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+autoload -U compinit && compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+
+mkdir -p $XDG_STATE_HOME/zsh
+touch $XDG_STATE_HOME/zsh/zsh_history
+HISTFILE=$XDG_STATE_HOME/zsh/zsh_history
 HISTSIZE=10000
-SAVEHIST=9999
+SAVEHIST=1000
+setopt INC_APPEND_HISTORY # write to the history file immediately
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
 
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+
+export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+# TODO: unhide all files that are in their proper xdg config dirs
 source $ZDOTDIR/.zsh_aliases
 source $ZDOTDIR/.zsh_functions
 
 addToPathFront $HOME/scripts
-
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey -s ^h "cht.sh\n"
 
@@ -28,7 +31,7 @@ bindkey -s ^h "cht.sh\n"
 # there is also preexec
 precmd() {
     print -Pn "\e]0;%~\a";
-    vcs_info
+    vcs_info 2> /dev/null # silence git complaining when working with bare repos
 }
 
 zstyle ':vcs_info:*' enable git
