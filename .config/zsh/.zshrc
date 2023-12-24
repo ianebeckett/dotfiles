@@ -22,6 +22,7 @@ source $ZDOTDIR/.zsh_functions
 addToPathFront $HOME/scripts
 
 bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^h "cht.sh\n"
 
 # precmd runs after executing a command, before the next prompt is printed
 # there is also preexec
