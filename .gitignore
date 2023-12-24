@@ -15,6 +15,7 @@ bash_history
 .config/GIMP
 .config/gnome*
 .config/gtk*
+.config/htop
 .config/ibus
 .config/JetBrains
 .config/VSCodium

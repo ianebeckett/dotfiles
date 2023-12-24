@@ -19,6 +19,8 @@ setopt EXTENDED_HISTORY
 source $ZDOTDIR/.zsh_aliases
 source $ZDOTDIR/.zsh_functions
 
+addToPathFront $HOME/scripts
+
 bindkey -s ^f "tmux-sessionizer\n"
 
 # precmd runs after executing a command, before the next prompt is printed

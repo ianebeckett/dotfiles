@@ -28,7 +28,7 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 9 --all the single-digit relative numbers look like a bracket
 vim.opt.updatetime = 50
 
---vim.opt.colorcolumn = { "80" } 
+vim.opt.colorcolumn = { "80" }
 vim.opt.signcolumn = "yes"
 
 --vim.diagnostic.config({

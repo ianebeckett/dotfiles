@@ -26,11 +26,23 @@ info() {
     command info --vi-keys --subnodes $@
 }
 
+addToPath() {
+    if ! $(echo "$PATH" | tr ":" "\n" | grep -qx "$1") ; then
+        PATH=$PATH:$1 ;
+    fi
+}
+
+addToPathFront() {
+    if ! $(echo "$PATH" | tr ":" "\n" | grep -qx "$1") ; then
+        PATH=$1:$PATH ;
+    fi
+}
+
 # remove/install google play store
 # can also do enable, disable. does this remove them from home screen?
 # check connected: adb devices
 # view packages: adb shell pm list packages
-# TODO: generalize this to other apps? web browser, ...
+# TODO: generalize this to other apps: firefox focus, ...
 
 removeGooglePlay() {
     adb shell pm uninstall -k --user 0 com.android.vending
