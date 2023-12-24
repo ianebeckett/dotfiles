@@ -3,7 +3,7 @@ cat() {
 }
 
 cd() {
-    builtin cd "$@" #TODO: builtin vs command?
+    builtin cd "$@" # TODO: builtin vs command?
     ls
 }
 
@@ -15,6 +15,16 @@ cmake() {
 
 code() {
     command codium "$@"
+}
+
+# cd first to remember harpoons
+# TODO: change paths to be via $DOTFILES, as opposed to symlinks, to enable fugitive
+evim() {
+    cd $XDG_CONFIG_HOME/nvim && vim $XDG_CONFIG_HOME/nvim
+}
+
+ezsh() {
+    cd $ZDOTDIR && vim $ZDOTDIR
 }
 
 # intellij idea

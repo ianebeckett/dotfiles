@@ -3,18 +3,12 @@ alias gdb='gdb -quiet' #use cgdb?
 alias gs='git status'
 alias ls='ls -lh --color=auto --group-directories-first --format=single-column'
 alias la='command ls -lha --color=auto --group-directories-first' # aliases are recursive
-alias path='<<<${(F)path}' # print $PATH, one per line
+alias path='<<<${(F)path}'
 alias mv='mv -i'
 alias rm='rm -I'
-alias mkdir="mkdir -p"
+#alias mkdir="mkdir -p"
 
 # TODO: integrate tmux windowizer to exec vim from the parent directory so harpoon remembers list
-# TODO: change paths to be via $DOTFILES, as opposed to symlinks, to enable fugitive with the aliases
-alias ezsh="vim $ZDOTDIR"
-alias evim="vim $XDG_CONFIG_HOME/nvim"
-#alias ei3="vim $XDG_CONFIG_HOME/i3"
-#alias eterm="vim $XDG_CONFIG_HOME/xterm"
-#alias etmux="vim $XDG_CONFIG_HOME/tmux.conf"
 
 #alias study=
 #alias work=
