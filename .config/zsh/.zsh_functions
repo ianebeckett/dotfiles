@@ -63,3 +63,17 @@ restoreGooglePlay() {
     adb shell pm install-existing com.android.vending
 }
 
+nodeVersions() {
+    echo "npm list -g"
+    npm list -g
+    echo "yarn global list"
+    yarn global list; echo
+    echo "npm list"
+    npm list
+    echo "yarn list"
+    yarn list; echo
+    echo "nvm ls"
+    nvm ls; echo
+    echo "node --version"
+    node --version
+}
