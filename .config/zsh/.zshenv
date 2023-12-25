@@ -7,9 +7,9 @@
 
 # environment variables
 # default programs
-#export EDITOR="nvim" #TODO: update
-#export TERMINAL="st" #TODO: update
-#export BROWSER="firefox" #TODO: do I want zshenv to set a different broswer from the one I typically use?
+#export EDITOR="nvim" # TODO: update
+#export TERMINAL="st" # TODO: update
+#export BROWSER="firefox" # TODO: do I want zshenv to set a different broswer from the one I typically use?
 
 # clean up ~/
 export LESSHISTFILE="-"
@@ -18,21 +18,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 #store user-specific executables in ~/.local/bin
-export ZDOTDIR="$HOME/.config/zsh" #TODO: ensure that this isn't making a dir with all file permissions
+export ZDOTDIR="$HOME/.config/zsh" # TODO: ensure that this isn't making a dir with all file permissions
 
 exists() {
     command -v $1 > /dev/null 2>&1
-}
-
-addToPath() {
-    if ! $(echo "$PATH" | tr ":" "\n" | grep -qx "$1") ; then
-        PATH=$PATH:$1 ;
-    fi
-}
-
-addToPathFront() {
-    if ! $(echo "$PATH" | tr ":" "\n" | grep -qx "$1") ; then
-        PATH=$1:$PATH ;
-    fi
 }
 

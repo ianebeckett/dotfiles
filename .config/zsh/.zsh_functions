@@ -58,7 +58,8 @@ removeGooglePlay() {
     adb shell pm uninstall -k --user 0 com.android.vending
 }
 
-# you may need to reset the app to factory settings and reboot before it can update or install anything
+# you may need to reset the app to factory settings and reboot before it can
+# update or install anything
 restoreGooglePlay() {
     adb shell pm install-existing com.android.vending
 }

@@ -1,3 +1,4 @@
+alias vim='nvim'
 alias python="python3"
 alias gdb='gdb -quiet' #use cgdb?
 alias gs='git status'
