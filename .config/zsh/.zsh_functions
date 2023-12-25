@@ -64,16 +64,34 @@ restoreGooglePlay() {
 }
 
 nodeVersions() {
-    echo "npm list -g"
-    npm list -g
-    echo "yarn global list"
-    yarn global list; echo
-    echo "npm list"
-    npm list
-    echo "yarn list"
-    yarn list; echo
+    # installed via official bash script at github.com/nvm-sh/nvm
+    echo "nvm --version"
+    nvm --version; echo
+
     echo "nvm ls"
     nvm ls; echo
+
+    # installed via `node install`
+    # Check that this matches nvm's node version. Mismatch may indicate that
+    # node was installed using a different package manager e.g. apt
     echo "node --version"
-    node --version
+    node --version; echo
+
+    echo "npm --version"
+    npm --version; echo
+
+    echo "npm list -g"
+    npm list -g; echo
+
+    echo "npm list"
+    npm list; echo
+
+    echo "yarn --version"
+    yarn --version; echo
+
+    echo "yarn global list"
+    yarn global list; echo
+
+    echo "yarn list"
+    yarn list; echo
 }

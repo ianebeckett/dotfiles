@@ -23,6 +23,10 @@ export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 source $ZDOTDIR/.zsh_aliases
 source $ZDOTDIR/.zsh_functions
 
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 addToPathFront $HOME/scripts
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey -s ^h "cht.sh\n"

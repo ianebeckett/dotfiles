@@ -22,6 +22,7 @@ bash_history
 .config/libreoffice
 .config/mimeapps.list
 .config/nautilus
+.config/nvm
 .config/pavucontrol.ini
 .config/pulse
 .config/totem
@@ -33,4 +34,5 @@ local
 # why do I have both local and .local?
 .local
 ~/.local
+
 
