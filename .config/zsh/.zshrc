@@ -19,17 +19,14 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
-# TODO: unhide all files that are in their proper xdg config dirs
+# TODO: unhide files that are in their proper xdg config dirs
 source $ZDOTDIR/.zsh_aliases
 source $ZDOTDIR/.zsh_functions
+addToPathFront $HOME/scripts
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-addToPathFront $HOME/scripts
-bindkey -s ^f "tmux-sessionizer\n"
-bindkey -s ^h "cht.sh\n"
 
 # precmd runs after executing a command, before the next prompt is printed
 # there is also preexec

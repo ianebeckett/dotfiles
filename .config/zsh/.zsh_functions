@@ -17,8 +17,14 @@ code() {
     command codium "$@"
 }
 
-# cd first to remember harpoons
+etmux() {
+    cd $XDG_CONFIG_HOME/tmux && vim $XDG_CONFIG_HOME/tmux
+}
+
+# cd first to remember harpoons and enable fugutive
 # TODO: change paths to be via $DOTFILES, as opposed to symlinks, to enable fugitive
+# TODO: only cd if not currently at right spot in order to preserve prev 
+# (or just use push/popd?)
 evim() {
     cd $XDG_CONFIG_HOME/nvim && vim $XDG_CONFIG_HOME/nvim
 }
@@ -26,6 +32,8 @@ evim() {
 ezsh() {
     cd $ZDOTDIR && vim $ZDOTDIR
 }
+
+ewm() {}
 
 # intellij idea
 idea() {

@@ -36,7 +36,7 @@ return require('packer').startup(function(use)
       'VonHeikemen/lsp-zero.nvim',
       branch = 'v3.x',
       requires = {
-          -- Uncomment these if you want to manage LSP servers from neovim
+          -- lsp package manager
           {'williamboman/mason.nvim'},
           {'williamboman/mason-lspconfig.nvim'},
           -- LSP Support
@@ -44,6 +44,7 @@ return require('packer').startup(function(use)
           -- Autocompletion
           {'hrsh7th/nvim-cmp'},
           {'hrsh7th/cmp-nvim-lsp'},
+          -- snippets
           {'L3MON4D3/LuaSnip'},
       }
   }
