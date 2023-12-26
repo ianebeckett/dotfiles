@@ -46,10 +46,6 @@
         quiet: true
         stderr: true
     - 
-        command: git config --global init.defaultBranch main
-        quiet: true
-        stderr: true
-    - 
         command: git config --global user.name 'Ian Beckett'
         description: configuring git
         quiet: true
