@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
 
   --colorscheme
   use('ellisonleao/gruvbox.nvim')
+  use('tomasiser/vim-code-dark')
 
   use('mbbill/undotree')
   use('tpope/vim-fugitive')

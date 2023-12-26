@@ -160,6 +160,11 @@ _G.packer_plugins = {
     path = "/home/ian/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-code-dark"] = {
+    loaded = true,
+    path = "/home/ian/.local/share/nvim/site/pack/packer/start/vim-code-dark",
+    url = "https://github.com/tomasiser/vim-code-dark"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/ian/.local/share/nvim/site/pack/packer/start/vim-fugitive",

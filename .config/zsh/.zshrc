@@ -24,9 +24,8 @@ source $ZDOTDIR/.zsh_aliases
 source $ZDOTDIR/.zsh_functions
 addToPathFront $HOME/scripts
 
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^h "cht.sh\n"
 
 # precmd runs after executing a command, before the next prompt is printed
 # there is also preexec
@@ -52,3 +51,10 @@ PROMPT='%B%F{green}@%f: %F{blue}%~%f${vcs_info_msg_0_}%b %(!.#.$) '
 # plugins
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# things addded by outside scripts, e.g. version managers
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

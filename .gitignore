@@ -28,6 +28,7 @@ bash_history
 .config/totem
 .config/vlc
 .config/yelp
+.config/nvim/plugin/packer_compiled.lua
 
 # machine-local files
 local
