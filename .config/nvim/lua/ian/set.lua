@@ -17,7 +17,7 @@ vim.opt.wrap = false
 --use undofile and undotree intead of swapfile
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("XDG_STATE_HOME") .. "/vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
@@ -31,25 +31,6 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = { "80" }
 vim.opt.signcolumn = "yes"
 
---vim.diagnostic.config({
---    signs = {
---        text = {
---            [vim.diagnostic.severity.ERROR] = '',
---            [vim.diagnostic.severity.WARN] = '',
---            [vim.diagnostic.severity.HINT] = '',
---            [vim.diagnostic.severity.INFO] = '',
---        }
---    }
---})
-
 --netrw settings
 vim.g.netrw_banner = 0 -- hidden
---vim.g.netrw_liststyle = 3 -- tree, useful for seeing the shape of new projects
 
---bracket expansion
---inoremap (; (<CR>);<C-c>O
---inoremap (, (<CR>),<C-c>O
---inoremap {; {<CR>};<C-c>O
---inoremap {, {<CR>},<C-c>O
---inoremap [; [<CR>];<C-c>O
---inoremap [, [<CR>],<C-c>O
