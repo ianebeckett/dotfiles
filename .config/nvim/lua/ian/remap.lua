@@ -1,6 +1,6 @@
---we place plugin-specific remaps in their respective "after/plugin/foo.lua" 
+--plugin-specific remaps in their respective "after/plugin/foo.lua" 
 --vim.keymap.set("n", "<leader><CR>", vim.cmd.w)
-vim.keymap.set("i", "<C-c>", "<esc>")
+--vim.keymap.set("i", "<C-c>", "<esc>")
 vim.keymap.set("n", "Q", "<nop>")
 
 --netrw window management
@@ -16,7 +16,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "nzzzv")
 
 --line management
-vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "J", "mzJ`z") --join (this takes up a desirable key
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 

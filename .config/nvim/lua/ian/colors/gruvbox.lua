@@ -2,8 +2,8 @@ vim.o.background = "dark" -- or "light" for light mode
 
 require("gruvbox").setup({
     terminal_colors = true, -- add neovim terminal colors
-    undercurl = false,
-    underline = false,
+    undercurl = true,
+    underline = true,
     bold = false,
     italic = {
         strings = false,

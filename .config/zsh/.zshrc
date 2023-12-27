@@ -6,6 +6,10 @@ mkdir -p $XDG_CACHE_HOME/zsh
 touch $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 autoload -U compinit && compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
+# vi mode; esc to simulate normal mode; i for insert mode
+bindkey -v
+export KEYTIMEOUT=1
+
 mkdir -p $XDG_STATE_HOME/zsh
 touch $XDG_STATE_HOME/zsh/zsh_history
 HISTFILE=$XDG_STATE_HOME/zsh/zsh_history
