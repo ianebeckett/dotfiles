@@ -5,3 +5,5 @@
 	colorMoved = zebra
 [core]
 	editor = vim
+[init]
+	defaultBranch = main

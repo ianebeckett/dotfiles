@@ -22,6 +22,7 @@ setopt EXTENDED_HISTORY
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
+# source software that's fundemental to my worflow
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 # TODO: unhide files that are in their proper xdg config dirs
 source $ZDOTDIR/.zsh_aliases
@@ -60,5 +61,9 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# source misc software
 export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+addToPathFront "$VOLTA_HOME/bin"
+
+#addToPath "/opt/anki-23.12-linux-qt6"
+

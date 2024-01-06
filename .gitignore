@@ -29,6 +29,9 @@ bash_history
 .config/vlc
 .config/yelp
 .config/nvim/plugin/packer_compiled.lua
+.config/freerdp
+.config/remmina
+.config/wireshark
 
 # machine-local files
 local
