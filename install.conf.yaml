@@ -7,7 +7,8 @@
     link:
         create: true
         relink: true
-        ignore-missing: true # creates link even if destination doesn't exist yet
+        force: true
+        ignore-missing: true
 #TODO: make shell defaults:
 # quiet: true
 # stderr: true
@@ -17,15 +18,19 @@
 #  - [git submodule update --init --recursive, Installing submodules] #TODO: where should we put this?
 
 # link: create symlinks to dotfiles
-# TODO:if the file already exists, its contents have to be moved first (?)
 # ~/foo: is shorthand for ~/foo: ~/.dotfiles/foo, which in turn means to create a symlink at ~/foo, which points to the filepath ~/.dotfiles/foo.
 # CAUTION: this will makes links asuming the destination has unhidden file names. To keep the dot at the beginning, the dest muc be listed manually.
 # I want to keep .zshenv, .zshrc, and some other config files in ~/.dotfiles for version control and backup.
-# I want .zshenv and .zshrc to remain in $HOME, because it's easy to source them from there.
-# I also want them to exist in $ZDOTDIR, which should be set to $HOME/.config/zsh in accordance with XDG specifications.
+# I want .zshenv and .zshrc to be symlinks in $HOME, because it's easy to source them from there.
+# I want .zshenv and .zshrc to exist in $ZDOTDIR, which should be set to $HOME/.config/zsh in accordance with XDG specifications.
 # The links to $ZDOTDIR won't work until after .zshenv is sourced, because that's where the export command lies.
 - link:
-    ~/.config: ~/.dotfiles/.config
+    ~/.config/i3: ~/.dotfiles/.config/i3
+    ~/.config/kitty: ~/.dotfiles/.config/kitty
+    ~/.config/nvim: ~/.dotfiles/.config/nvim
+    ~/.config/nvm: ~/.dotfiles/.config/nvm
+    ~/.config/tmux: ~/.dotfiles/.config/tmux
+    ~/.config/zsh: ~/.dotfiles/.config/zsh
     ~/.gitconfig: ~/.dotfiles/.gitconfig
     ~/.zshenv: ~/.dotfiles/.config/zsh/.zshenv
     ~/.zshrc: ~/.dotfiles/.config/zsh/.zshrc
@@ -34,7 +39,7 @@
     # ~/history: $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION #TODO: fix; $ expansion not working
 
 #TODO: move most of this to a bash/sh script? This would be less verbose and less reliant on dotbot
-#TODO: move command defaults to top once it's working (currently doesn't work)
+#TODO: move command defaults to top (currently doesn't work)
 - shell:
     - 
         command: sudo apt-get install -y zsh #apt-get preferred to apt for scripts
@@ -59,18 +64,16 @@
         command: git config --global user.email 'redacted'
         quiet: true
         stderr: true
-          #    -
-          #        command: git config --global diff.colorMoved zebra
-          #        quiet: true
-          #        stderr: true
-
-
-  #- 
-  #  command: ./test.zsh # run test script #TODO: must scripts be compatible with the system's default shell, or does shebang zsh work?
-  #  stdout: true
-  #  stderr: true
-#  - 
-#   command: ssh-keygen -t ed25519 -C ian@$(cat /etc/hostname) #TODO: should this comment be based on my git email, or my hostname? 
+#-
+#    command: git config --global diff.colorMoved zebra
+#    quiet: true
+#    stderr: true
+#- 
+#    command: ./test.zsh # run test script #TODO: must scripts be compatible with the system's default shell, or does shebang zsh work?
+#    stdout: true
+#    stderr: true
+#- 
+#    command: ssh-keygen -t ed25519 -C ian@$(cat /etc/hostname) #TODO: should this comment be based on my git email, or my hostname? 
 #    description: "generating ssh key. See add-ssh-key.txt for instructions."
 #    quiet: true
 #    stdout: true
