@@ -27,7 +27,7 @@ sudo apt update
 # install packages
 # use apt-get and apt-cache in lieu of apt for backwards compatibility with scripts
 # be sure to install desired packages that were removed while purging snaps
-for i in bat neovim git tldr fzf vlc yt-dlp ; do
+for i in git tmux fzf bat neovim tldr vlc yt-dlp ; do
   sudo apt install -y $i
 done
 
