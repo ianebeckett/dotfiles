@@ -25,6 +25,7 @@
 # I also want them to exist in $ZDOTDIR, which should be set to $HOME/.config/zsh in accordance with XDG specifications.
 # The links to $ZDOTDIR won't work until after .zshenv is sourced, because that's where the export command lies.
 - link:
+    ~/.config: ~/.dotfiles/.config
     ~/.gitconfig: ~/.dotfiles/.gitconfig
     ~/.zshenv: ~/.dotfiles/.config/zsh/.zshenv
     ~/.zshrc: ~/.dotfiles/.config/zsh/.zshrc
