@@ -42,7 +42,11 @@
         stderr: true
     -
         command: sudo chsh -s $(which zsh)
-        description: setting zsh as the default shell
+        description: setting zsh as the default shell (log out to see change)
+        quiet: true
+        stderr: true
+    -
+        command: ./steup_zsh.sh
         quiet: true
         stderr: true
     - 
@@ -59,22 +63,7 @@
           #        quiet: true
           #        stderr: true
 
-#TODO:  do all these in the right order:
-# mkdir # ~/.config/zsh
-# make ZDOTDIR and XDG dirs
-# zshenv: export ZDOTDIR, XDG etc.
-# eg zshenv: export ZDOTDIR="$HOME/.config/zsh"
-# move .zcompdump to $ZDOTDIR
-# move .zsh_history to $ZDOTDIR (?)
-# link $ZDOTDIR/.zshenv to ~/.zshenv (or to ~/.dotfiles/.zshenv?)
-# link $ZDOTDIR/.zshrc to ~/.zshrc (or to ~/.dotfiles/.zshrc?)
 
-#TODO: fix automated font setup
-# preferred fonts: JetBrains Mono > Ubuntu Mono > Cascadia Mono > family: monospace
-# confirm font installed correctly by running fc-list | grep "<name-of-font>"
-  # - command: fc-cache -fv # build font #TODO: use -E, check retval and print on error?
-  #   stdout: false
-  #   stderr: true
   #- 
   #  command: ./test.zsh # run test script #TODO: must scripts be compatible with the system's default shell, or does shebang zsh work?
   #  stdout: true

@@ -1,4 +1,4 @@
-#echo "howdy from .zshrc"
+echo "howdy from .zshrc"
 
 unsetopt BEEP
 
