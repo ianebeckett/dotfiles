@@ -46,7 +46,7 @@
         quiet: true
         stderr: true
     -
-        command: ./steup_zsh.sh
+        command: ./setup_zsh.sh
         quiet: true
         stderr: true
     - 
