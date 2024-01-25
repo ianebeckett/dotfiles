@@ -1,6 +1,6 @@
 # usr/bin/env bash
 
-mkdir $XDG_CONGIG_HOME/zsh
+mkdir $XDG_CONFIG_HOME/zsh
 mv ~/.zcompdump $ZDOTDIR
 rm ~/.zsh_history
 ln -s $ZDOTDIR/.zshenv ~/.zshenv
