@@ -1,9 +1,5 @@
 #! /usr/bin/env zsh
 
-#! #TODO: put zsh path in shebang
-# since most of this requires sudo, we can just run it with $ sudo ./setup_apt.zsh
-# sudo kept in commands here in case we want to limit the sudo scope to less than this whole file in the future
-
 echo "setting up apt \n"
 
 if exists apt; then
@@ -22,13 +18,12 @@ done
 sudo add-apt-repository ppa:tomtomtom/yt-dlp
 
 # Update package lists
-sudo apt update
+sudo apt-get update
 
 # install packages
 # use apt-get and apt-cache in lieu of apt for backwards compatibility with scripts
-# be sure to install desired packages that were removed while purging snaps
-for i in git tmux fzf bat neovim tldr vlc yt-dlp ; do
-  sudo apt install -y $i
+for i in build-essential gdb libstdc++ pthread git xclip ripgrep tmux fzf bat neovim tldr vlc yt-dlp ; do
+  sudo apt-get install -y $i
 done
 
 echo "finished installing apt packages. Reboot now, then run setup_after_apt.zsh. \n"
