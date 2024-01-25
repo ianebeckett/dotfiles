@@ -57,8 +57,6 @@ addToPathFront() {
 }
 
 # remove/install google play store
-# can also do enable, disable. does this remove them from home screen?
-# check connected: adb devices
 # view packages: adb shell pm list packages
 # TODO: generalize this to other apps: firefox focus, ...
 
@@ -70,6 +68,8 @@ removeGooglePlay() {
 # update or install anything
 restoreGooglePlay() {
     adb shell pm install-existing com.android.vending
+    # TODO: ask user to reboot Android, then do so.
+    # TODO: do I also need com.android.chrome?
 }
 
 nodeVersions() {

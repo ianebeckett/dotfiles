@@ -7,6 +7,7 @@ touch $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 autoload -U compinit && compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 # vi mode; esc to simulate normal mode; i for insert mode
+# # TODO: superfluous with tmux vi mode?
 bindkey -v
 export KEYTIMEOUT=1
 

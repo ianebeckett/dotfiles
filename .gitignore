@@ -32,6 +32,12 @@ bash_history
 .config/freerdp
 .config/remmina
 .config/wireshark
+.config/QtProject.conf
+.config/VirtualBox/
+.config/discord/
+.config/simple-scan/
+.config/zoom.conf
+.config/zoomus.conf
 
 # machine-local files
 local
