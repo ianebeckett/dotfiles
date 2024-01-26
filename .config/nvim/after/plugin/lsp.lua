@@ -23,8 +23,6 @@ require('mason-lspconfig').setup({
     --install these lsps automatically 
     ensure_installed = {
         'clangd',
-        'cssls',
-        'html',
         'lua_ls',
     },
     --allow lsp_zero to set default configuration settings for every lsp

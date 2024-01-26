@@ -51,8 +51,8 @@ PROMPT='%B%F{green}@%f: %F{blue}%~%f${vcs_info_msg_0_}%b %(!.#.$) '
 
 # start ssh-agent (keyring already does this on ubuntu: $ ps -aux | grep ssh)
 # eval "$(ssh-agent -s)" > /dev/null
-# ssh-add -q ~/.ssh #TODO: does this work, or do I need to specify the file(s)?
-# Maybe ~/.ssh/*.pub works.
+# for file in .ssh:
+    # ssh-add -q ~/.ssh/foo
 
 # plugins
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

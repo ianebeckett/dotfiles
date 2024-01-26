@@ -25,7 +25,7 @@ sudo apt-get update
 # install packages
 # use apt-get and apt-cache in lieu of apt for backwards compatibility with scripts
 # TODO: move list to file
-for i in build-essential gdb libstdc++ pthread git xclip ripgrep tmux fzf bat neovim tldr vlc yt-dlp ; do
+for i in build-essential gdb libstdc++ clang pthread curl git xclip ripgrep tmux fzf bat neovim tldr vlc yt-dlp ; do
   sudo apt-get install -y $i
 done
 

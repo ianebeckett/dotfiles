@@ -3,6 +3,7 @@
 
 # shell files
 zsh_history
+**/*zcompdump
 bash_history
 
 # configs 
