@@ -16,12 +16,14 @@ done
 
 # add repositories
 sudo add-apt-repository ppa:tomtomtom/yt-dlp
+sudo add-apt-repository ppa:neovim-ppa/unstable
 
 # Update package lists
 sudo apt-get update
 
 # install packages
 # use apt-get and apt-cache in lieu of apt for backwards compatibility with scripts
+# TODO: move list to file
 for i in build-essential gdb libstdc++ pthread git xclip ripgrep tmux fzf bat neovim tldr vlc yt-dlp ; do
   sudo apt-get install -y $i
 done
