@@ -15,6 +15,7 @@ for i in rhythmbox ubuntu-web-launchers; do
 done
 
 # add repositories
+# TODO: make it not pause for input [ENTER]
 sudo add-apt-repository ppa:tomtomtom/yt-dlp
 sudo add-apt-repository ppa:neovim-ppa/unstable
 
