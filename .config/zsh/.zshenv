@@ -3,7 +3,7 @@
 # runs in both interactive and non-interactive shells
 # CAUTION: other zsh files are sourced after zshenv, and could overwrite these settings
 # WARNING: do not modify the default behaviour of standard commands here, as many tools rely on those. Do so only in .zshrc
-echo "howdy from .zshenv"
+#echo "howdy from .zshenv"
 
 # environment variables
 # default programs
