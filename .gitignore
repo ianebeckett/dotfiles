@@ -6,6 +6,8 @@ zsh_history
 bash_history
 
 # configs 
+# TODO: remove these dirs that aren't needed for environment setup,
+# then remove them from here.
 .config/cef_user_data
 .config/dconf
 .config/eog
@@ -41,7 +43,7 @@ bash_history
 
 # machine-local files
 local
-# why do I have both local and .local?
+# TODO: why do I have both local and .local?
 .local
 ~/.local
 
