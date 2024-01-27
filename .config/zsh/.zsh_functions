@@ -9,9 +9,9 @@ cd() {
 
 # beware infinite loops when failing to use command foo in function foo()
 # generate compile_commands.json for clangd
-cmake() {
-    command cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 "$@" 
-}
+#cmake() {
+#    command cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 "$@" 
+#}
 
 code() {
     command codium "$@"

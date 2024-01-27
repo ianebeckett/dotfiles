@@ -66,5 +66,7 @@ export NVM_DIR="$HOME/.config/nvm"
 export VOLTA_HOME="$HOME/.volta"
 addToPathFront "$VOLTA_HOME/bin"
 
-#addToPath "/opt/anki-23.12-linux-qt6"
-
+# 438 environment variables
+export MY_INSTALL_DIR=$HOME/.local
+export PATH=$MY_INSTALL_DIR/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/lib
