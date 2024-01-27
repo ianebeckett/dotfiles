@@ -41,6 +41,7 @@ bash_history
 .config/simple-scan/
 .config/zoom.conf
 .config/zoomus.conf
+.config/nvim/plugin/packer_compiled.lua
 
 # machine-local files
 local
