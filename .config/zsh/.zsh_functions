@@ -18,7 +18,7 @@ code() {
 }
 
 etmux() {
-    cd .dotfiles/.config/tmux && vim .dotfiles/.config/tmux
+    cd ~/.dotfiles/.config/tmux && vim ~/.dotfiles/.config/tmux
 }
 
 # cd first to remember harpoons and enable fugutive
@@ -26,7 +26,7 @@ etmux() {
 # TODO: only cd if not currently at right spot in order to preserve prev 
 # (or just use push/popd?)
 evim() {
-    cd .dotfiles/.config/nvim && vim .dotfiles/.config//nvim
+    cd ~/.dotfiles/.config/nvim && vim ~/.dotfiles/.config//nvim
 }
 
 ezsh() {
