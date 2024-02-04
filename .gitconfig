@@ -7,3 +7,5 @@
 	editor = vim
 [init]
 	defaultBranch = main
+[alias]
+    lg = log --graph --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)'

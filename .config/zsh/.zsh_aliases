@@ -2,7 +2,7 @@ alias vim='nvim'
 alias python="python3"
 alias gdb='gdb -quiet' #use cgdb?
 alias gs='git status'
-alias gl='git log --graph'
+alias gl='git lg' # calls alias in git config
 alias cc='git commit -v'
 alias ls='ls -lh --color=auto --group-directories-first --format=single-column'
 alias la='command ls -lha --color=auto --group-directories-first' # aliases are recursive
