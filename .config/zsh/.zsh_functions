@@ -1,0 +1,106 @@
+cat() {
+    command batcat "$@"
+}
+
+cd() {
+    builtin cd "$@" # TODO: builtin vs command?
+    ls
+}
+
+# beware infinite loops when failing to use command foo in function foo()
+# generate compile_commands.json for clangd
+#cmake() {
+#    command cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 "$@" 
+#}
+
+code() {
+    command codium "$@"
+}
+
+etmux() {
+    cd .dotfiles/.config/tmux && vim .dotfiles/.config/tmux
+}
+
+# cd first to remember harpoons and enable fugutive
+# TODO: change paths to be via $DOTFILES, as opposed to symlinks, to enable fugitive
+# TODO: only cd if not currently at right spot in order to preserve prev 
+# (or just use push/popd?)
+evim() {
+    cd .dotfiles/.config/nvim && vim .dotfiles/.config//nvim
+}
+
+ezsh() {
+    cd $ZDOTDIR && vim $ZDOTDIR
+}
+
+ewm() {}
+
+# intellij idea
+idea() {
+    idea.sh "$@"
+}
+
+info() {
+    command info --vi-keys --subnodes $@
+}
+
+addToPath() {
+    if ! $(echo "$PATH" | tr ":" "\n" | grep -qx "$1") ; then
+        PATH=$PATH:$1 ;
+    fi
+}
+
+addToPathFront() {
+    if ! $(echo "$PATH" | tr ":" "\n" | grep -qx "$1") ; then
+        PATH=$1:$PATH ;
+    fi
+}
+
+# remove/install google play store
+# view packages: adb shell pm list packages
+# TODO: generalize this to other apps: firefox focus, ...
+
+removeGooglePlay() {
+    adb shell pm uninstall -k --user 0 com.android.vending
+}
+
+# you may need to reset the app to factory settings and reboot before it can
+# update or install anything
+restoreGooglePlay() {
+    adb shell pm install-existing com.android.vending
+    # TODO: ask user to reboot Android, then do so.
+    # TODO: do I also need com.android.chrome?
+}
+
+nodeVersions() {
+    # installed via official bash script at github.com/nvm-sh/nvm
+    echo "nvm --version"
+    nvm --version; echo
+
+    echo "nvm ls"
+    nvm ls; echo
+
+    # installed via `node install`
+    # Check that this matches nvm's node version. Mismatch may indicate that
+    # node was installed using a different package manager e.g. apt
+    echo "node --version"
+    node --version; echo
+
+    echo "npm --version"
+    npm --version; echo
+
+    echo "npm list -g"
+    npm list -g; echo
+
+    echo "npm list"
+    npm list; echo
+
+    echo "yarn --version"
+    yarn --version; echo
+
+    echo "yarn global list"
+    yarn global list; echo
+
+    echo "yarn list"
+    yarn list; echo
+}

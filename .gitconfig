@@ -1,0 +1,9 @@
+[user]
+	name = Ian Beckett
+	email = redacted
+[diff]
+	colorMoved = zebra
+[core]
+	editor = vim
+[init]
+	defaultBranch = main

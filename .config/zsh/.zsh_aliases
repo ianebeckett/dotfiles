@@ -1,0 +1,17 @@
+alias vim='nvim'
+alias python="python3"
+alias gdb='gdb -quiet' #use cgdb?
+alias gs='git status'
+alias gl='git log --graph'
+alias cc='git commit -v'
+alias ls='ls -lh --color=auto --group-directories-first --format=single-column'
+alias la='command ls -lha --color=auto --group-directories-first' # aliases are recursive
+alias path='<<<${(F)path}'
+alias mv='mv -i'
+alias rm='rm -I'
+#alias mkdir="mkdir -p"
+
+# TODO: integrate tmux windowizer to exec vim from the parent directory so harpoon remembers list
+
+#alias study=
+#alias work=

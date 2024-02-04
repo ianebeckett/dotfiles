@@ -1,2 +1,52 @@
 # built font config files
 *.uuid
+
+# shell files
+zsh_history
+**/*zcompdump
+bash_history
+
+# configs 
+# TODO: remove these dirs that aren't needed for environment setup,
+# then remove them from here.
+.config/cef_user_data
+.config/dconf
+.config/eog
+.config/evince
+.config/evolution
+.config/gedit
+.config/GIMP
+.config/gnome*
+.config/gtk*
+.config/htop
+.config/ibus
+.config/JetBrains
+.config/VSCodium
+.config/libreoffice
+.config/mimeapps.list
+.config/nautilus
+.config/nvm
+.config/pavucontrol.ini
+.config/pulse
+.config/totem
+.config/vlc
+.config/yelp
+.config/nvim/plugin/packer_compiled.lua
+.config/freerdp
+.config/remmina
+.config/wireshark
+.config/QtProject.conf
+.config/VirtualBox/
+.config/discord/
+.config/simple-scan/
+.config/zoom.conf
+.config/zoomus.conf
+.config/nvim/plugin/packer_compiled.lua
+
+# machine-local files
+local
+# TODO: why do I have both local and .local?
+.local
+~/.local
+
+
