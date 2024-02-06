@@ -31,10 +31,6 @@ vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>y", "\"+Y")
 
-vim.keymap.set("n", "<leader>f", function()
-    vim.lsp.buf.format()
-end)
-
 --quickfix navigation
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
