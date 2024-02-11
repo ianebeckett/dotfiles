@@ -8,4 +8,6 @@
 [init]
 	defaultBranch = main
 [alias]
+    l = log --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)'
     lg = log --graph --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)'
+    ld = log --pretty=format:'%Cred%h%Creset %C(cyan)%ad%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)'

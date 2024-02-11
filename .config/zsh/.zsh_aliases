@@ -1,9 +1,15 @@
 alias vim='nvim'
 alias python="python3"
 alias gdb='gdb -quiet' #use cgdb?
+
+# git
 alias gs='git status'
-alias gl='git lg' # calls alias in git config
 alias cc='git commit -v'
+# aliases in ~/.dotfiles/.gitconfig
+alias gl='git l'
+alias glg='git lg'
+alias gld='git ld'
+
 alias ls='ls -lh --color=auto --group-directories-first --format=single-column'
 alias la='command ls -lha --color=auto --group-directories-first' # aliases are recursive
 alias path='<<<${(F)path}'
