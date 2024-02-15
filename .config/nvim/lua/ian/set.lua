@@ -10,6 +10,10 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+--TODO
+--set splitbelow
+--set splitright
+
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
@@ -25,7 +29,7 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 9 --all the single-digit relative numbers look like a bracket
+vim.opt.scrolloff = 10 --all the single-digit relative numbers look like a bracket
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = { "80" }

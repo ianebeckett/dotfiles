@@ -17,6 +17,10 @@ code() {
     command codium "$@"
 }
 
+edot() {
+    cd ~/.dotfiles && vim ~/.dotfiles
+}
+
 etmux() {
     cd ~/.dotfiles/.config/tmux && vim ~/.dotfiles/.config/tmux
 }
