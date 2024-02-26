@@ -1,10 +1,9 @@
 alias vim='nvim'
-alias python="python3"
-alias gdb='gdb -quiet' #use cgdb?
+alias gdb='gdb -quiet' #use cgdb/gf2?
 
 # git
 alias gs='git status'
-alias cc='git commit -v'
+#alias cc='git commit -v'
 # aliases in ~/.dotfiles/.gitconfig
 alias gl='git l'
 alias glg='git lg'

@@ -1,15 +1,15 @@
-[user]
-	name = Ian Beckett
-	email = redacted
-[diff]
-	colorMoved = zebra
-[core]
-	editor = vim
-[init]
-	defaultBranch = main
 [alias]
-    l = log --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)'
-    lg = log --graph --pretty=format:'%Cred%h%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)'
-    ld = log --pretty=format:'%Cred%h%Creset %C(cyan)%ad%Creset %an -%C(yellow)%d%Creset %s %Cgreen(%cr)'
+    l = log --pretty=format:'%Cred%h%Creset %an -%C(cyan)%d%Creset %s %Cgreen(%cr)'
+    lg = log --graph --pretty=format:'%Cred%h%Creset %an -%C(cyan)%d%Creset %s %Cgreen(%cr)'
+    ld = log --pretty=format:'%Cred%h%Creset %C(yellow)%ad%Creset %an -%C(cyan)%d%Creset %s %Cgreen(%cr)'
 [commit]
     template = ~/.git-commit-message
+[core]
+    editor = vim
+[diff]
+	colorMoved = zebra
+[init]
+    defaultBranch = main
+[user]
+    name = Ian Beckett
+    email = redacted

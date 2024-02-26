@@ -23,6 +23,7 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
     --install these lsps automatically 
     ensure_installed = {
+        'jedi_language_server',
         'clangd',
         'lua_ls',
     },
