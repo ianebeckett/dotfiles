@@ -70,3 +70,6 @@ addToPathFront "$VOLTA_HOME/bin"
 export MY_INSTALL_DIR=$HOME/.local
 addToPathFront $MY_INSTALL_DIR/bin
 export LD_LIBRARY_PATH=/usr/local/lib
+
+# capstone environment variables
+addToPathFront /home/ian/college/482-capstone/brlcad/build/bin
