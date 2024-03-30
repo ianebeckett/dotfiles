@@ -17,7 +17,7 @@ autocmd("BufWinEnter", {
             vim.cmd [[ Git push ]]
         end, opts)
 
-        -- rebase always
+        -- always rebase when pulling
         vim.keymap.set("n", "<leader>P", function()
             vim.cmd [[ Git pull --rebase ]]
         end, opts)

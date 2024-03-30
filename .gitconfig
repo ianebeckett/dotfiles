@@ -13,3 +13,5 @@
 [user]
     name = Ian Beckett
     email = redacted
+[pull]
+	rebase = true
