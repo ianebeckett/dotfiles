@@ -30,8 +30,13 @@ source $ZDOTDIR/.zsh_aliases
 source $ZDOTDIR/.zsh_functions
 addToPathFront $HOME/scripts
 
-bindkey -s ^f "tmux-sessionizer\n"
-bindkey -s ^h "cht.sh\n"
+session-widget() { tmux-sessionizer }
+zle -N session-widget
+bindkey ^f session-widget
+
+cheat-widget() { cht.sh }
+zle -N cheat-widget
+bindkey ^h cheat-widget
 
 # precmd runs after executing a command, before the next prompt is printed
 # there is also preexec
