@@ -15,8 +15,3 @@ telescope.setup {
 vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = "find files in cwd" })
 vim.keymap.set('n', '<leader>gf', builtin.live_grep, { desc = "grep files in cwd for string" })
 vim.keymap.set('n', '<leader>sg', builtin.git_files, { desc = "find files in git repo" })
-
---is this the same as live_grep?
---vim.keymap.set('n', '<leader>gf', function()
---    builtin.grep_string({ search = vim.fn.input("Grep > ") })
---end)
