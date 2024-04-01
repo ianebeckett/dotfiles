@@ -13,10 +13,6 @@ cd() {
 #    command cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 "$@" 
 #}
 
-code() {
-    command codium "$@"
-}
-
 edot() {
     cd ~/.dotfiles && vim ~/.dotfiles
 }
