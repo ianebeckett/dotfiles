@@ -2,16 +2,21 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    --colorscheme
+    --colorschemes
     use 'ellisonleao/gruvbox.nvim'
     use 'tomasiser/vim-code-dark'
 
     use 'mbbill/undotree'
     use 'tpope/vim-fugitive'
-    use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
+
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
     use 'nvim-treesitter/nvim-treesitter-context'
 
     use {
@@ -33,13 +38,12 @@ return require('packer').startup(function(use)
         requires = { { "nvim-lua/plenary.nvim" } }
     }
 
-    --nvim-cmp
+    -- lsp, completions, etc
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
 
-    -- snippets
     use {
         'L3MON4D3/LuaSnip',
         tag = "v2.*",
