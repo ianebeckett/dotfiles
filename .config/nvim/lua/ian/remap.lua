@@ -1,4 +1,4 @@
---plugin-specific remaps in their respective "after/plugin/foo.lua" 
+--plugin-specific remaps are in their respective "after/plugin/foo.lua" 
 --vim.keymap.set("n", "<leader><CR>", vim.cmd.w)
 --vim.keymap.set("i", "<C-c>", "<esc>")
 vim.keymap.set("n", "Q", "<nop>")
@@ -6,7 +6,6 @@ vim.keymap.set("n", "Q", "<nop>")
 --netrw window management
 vim.keymap.set("n", "<leader>nw", vim.cmd.Ex) --"new" window, or "netrw"
 vim.keymap.set("n", "<leader>vw", vim.cmd.Vex) --vertical window
---vim.keymap.set("n", "<leader>hw", vim.cmd.Hex) -- horizontal window
 
 --centered cursor for half-page jumping 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
