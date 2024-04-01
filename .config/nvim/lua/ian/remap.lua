@@ -21,13 +21,11 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 
 --delete selection into the black hole register,
 --preserving state of main register
+vim.keymap.set({"n", "v"}, "<leader>d", "\"_d")
 vim.keymap.set("x", "<leader>p", "\"_dp")
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("v", "<leader>d", "\"_d")
 
 --yank into system clipboard
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set({"n", "i"}, "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>y", "\"+Y")
 
 --quickfix navigation
