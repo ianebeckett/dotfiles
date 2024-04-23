@@ -1,5 +1,5 @@
 --plugin-specific remaps are in their respective "after/plugin/foo.lua" 
-vim.keymap.set("n", "<leader><CR>", vim.cmd.w)
+--vim.keymap.set("n", "<leader><CR>", vim.cmd.w) --TODO: :so instead?
 vim.keymap.set("i", "<C-c>", "<esc>")
 vim.keymap.set("n", "Q", "<nop>")
 
@@ -15,19 +15,17 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 --line management
-vim.keymap.set("n", "J", "mzJ`z") --join (this takes up a desirable key
+vim.keymap.set("n", "J", "mzJ`z") --join (this takes up a desirable key)
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 
 --delete selection into the black hole register,
 --preserving state of main register
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("v", "<leader>d", "\"_d")
+vim.keymap.set({"n", "v"}, "<leader>d", "\"_d")
 vim.keymap.set("x", "<leader>p", "\"_dp")
 
 --yank into system clipboard
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set({"n", "v"}, "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>y", "\"+Y")
 
 --quickfix navigation

@@ -47,7 +47,7 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '%F{1}*'
 #  we don't need '%s:' unless we're using multiple vcs. I only use git, so it's just clutter.
 zstyle ':vcs_info:*' formats '%F{green} (%b%u%F{green})%f'
-PROMPT='%B%F{green}@%f: %F{blue}%~%f${vcs_info_msg_0_}%b %(!.#.$) '
+PROMPT='%B%F{green}%n@%m%f %F{blue}%~%f${vcs_info_msg_0_}%b %(!.#.$) '
 
 # start ssh-agent (keyring already does this on ubuntu: $ ps -aux | grep ssh)
 # eval "$(ssh-agent -s)" > /dev/null
