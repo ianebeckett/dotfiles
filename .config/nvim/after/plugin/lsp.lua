@@ -25,6 +25,9 @@ cmp.setup({
     },
     sources = {
         { name = 'nvim_lsp' },
+    },
+    completion = {
+        completeopt = 'menu,menuone,noinsert'
     }
 })
 
