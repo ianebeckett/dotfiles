@@ -170,11 +170,6 @@ _G.packer_plugins = {
     path = "/home/ian/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["solarized.nvim"] = {
-    loaded = true,
-    path = "/home/ian/.local/share/nvim/site/pack/packer/start/solarized.nvim",
-    url = "https://github.com/shaunsingh/solarized.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/ian/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -184,11 +179,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ian/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
-  },
-  ["vim-code-dark"] = {
-    loaded = true,
-    path = "/home/ian/.local/share/nvim/site/pack/packer/start/vim-code-dark",
-    url = "https://github.com/tomasiser/vim-code-dark"
   },
   ["vim-fugitive"] = {
     loaded = true,

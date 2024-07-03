@@ -58,6 +58,7 @@ require('mason-lspconfig').setup({
         'jedi_language_server',
         'clangd',
         'lua_ls',
+        'eslint',
     },
     --allow lsp_zero to set default configuration settings for every lsp
     --without this handler, we would have to require('lspconfig').[server].setup({...}) for every server.
@@ -74,4 +75,13 @@ require('mason-lspconfig').setup({
         })
 
     },
+})
+
+require 'lspconfig'.eslint.setup({
+    on_attach = function(client, bufnr)
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "EslintFixAll",
+        })
+    end,
 })
