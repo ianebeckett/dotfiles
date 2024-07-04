@@ -2,9 +2,9 @@ cat() {
     command batcat "$@"
 }
 
+# note: "cd -" prints the new cwd.
 cd() {
-    builtin cd "$@"
-    ls
+    builtin cd "$@" && ls
 }
 
 # beware infinite loops when failing to use command foo in function foo()
