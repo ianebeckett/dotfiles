@@ -3,11 +3,12 @@ cat() {
 }
 
 cd() {
-    builtin cd "$@" # TODO: builtin vs command?
+    builtin cd "$@"
     ls
 }
 
 # beware infinite loops when failing to use command foo in function foo()
+
 # generate compile_commands.json for clangd
 #cmake() {
 #    command cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 "$@" 
@@ -33,12 +34,12 @@ ezsh() {
     cd $ZDOTDIR && vim $ZDOTDIR
 }
 
-ewm() {}
+# ewm() {}
 
 # intellij idea
-idea() {
-    idea.sh "$@"
-}
+# idea() {
+#    idea.sh "$@"
+# }
 
 info() {
     command info --vi-keys --subnodes $@
@@ -59,7 +60,6 @@ addToPathFront() {
 # remove/install google play store
 # view packages: adb shell pm list packages
 # TODO: generalize this to other apps: firefox focus, ...
-
 removeGooglePlay() {
     adb shell pm uninstall -k --user 0 com.android.vending
 }
