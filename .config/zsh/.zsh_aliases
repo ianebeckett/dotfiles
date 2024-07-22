@@ -5,6 +5,9 @@ alias gdb='gdb -quiet' #use cgdb/gf2?
 
 # git
 alias gs='git status'
+alias gb='git branch'
+alias gc='git checkout'
+alias gd='git diff'
 #alias cc='git commit -v'
 # aliases in ~/.dotfiles/.gitconfig
 alias gl='git l'
