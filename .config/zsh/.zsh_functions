@@ -58,8 +58,8 @@ addToPathFront() {
 }
 
 # remove/install google play store
-# view packages: adb shell pm list packages
-# TODO: generalize this to other apps: firefox focus, ...
+# view packages: adb shell pm list packages | grep 'foo'
+# TODO: make these into toggleFoo functions
 removeGooglePlay() {
     adb shell pm uninstall -k --user 0 com.android.vending
 }
@@ -68,8 +68,14 @@ removeGooglePlay() {
 # update or install anything
 restoreGooglePlay() {
     adb shell pm install-existing com.android.vending
-    # TODO: ask user to reboot Android, then do so.
-    # TODO: do I also need com.android.chrome?
+}
+
+removeSamsungInternet() {
+    adb shell pm uninstall -k --user 0 com.sec.android.app.sbrowser
+}
+
+restoreSamsungInternet() {
+    adb shell pm install-existing com.sec.android.app.sbrowser
 }
 
 nodeVersions() {
