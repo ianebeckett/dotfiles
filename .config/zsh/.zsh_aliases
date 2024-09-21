@@ -19,10 +19,9 @@ alias la='command ls -lha --color=auto --group-directories-first' # aliases are 
 alias path='<<<${(F)path}'
 alias mv='mv -i'
 #alias rm='rm -I'
-alias rm='echo "Try using trash-cli trash-put instead."; false'
+alias rm='trash-put'
+alias trash='trash-put'
 #alias mkdir="mkdir -p"
 
 # TODO: integrate tmux windowizer to exec vim from the parent directory so harpoon remembers list
 
-#alias study=
-#alias work=
