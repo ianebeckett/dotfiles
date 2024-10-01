@@ -12,8 +12,9 @@ alias gw='git worktree'
 #alias cc='git commit -v'
 # aliases in ~/.dotfiles/.gitconfig
 alias gl='git l'
-alias glg='git lg'
+alias gla='git la'
 alias gld='git ld'
+alias glg='git lg'
 
 alias ls='ls -lh --color=auto --group-directories-first --format=single-column'
 alias la='command ls -lha --color=auto --group-directories-first' # aliases are recursive

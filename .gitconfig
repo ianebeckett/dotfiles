@@ -1,7 +1,8 @@
 [alias]
     l = log --pretty=format:'%C(yellow)%h%Creset %an:%C(cyan)%d%Creset %s %Cgreen(%cr)'
-    lg = log --graph --pretty=format:'%C(yellow)%h%Creset %an:%C(cyan)%d%Creset %s %Cgreen(%cr)'
     ld = log --pretty=format:'%C(yellow)%h%Creset %C(yellow)%ad%Creset %an:%C(cyan)%d%Creset %s %Cgreen(%cr)'
+    la = log --all --pretty=format:'%C(yellow)%h%Creset %an:%C(cyan)%d%Creset %s %Cgreen(%cr)'
+    lg = log --graph --pretty=format:'%C(yellow)%h%Creset %an:%C(cyan)%d%Creset %s %Cgreen(%cr)'
 [commit]
     template = ~/.git-commit-message
 [core]
