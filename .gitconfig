@@ -1,17 +1,20 @@
 [alias]
-    l = log --pretty=format:'%Cred%h%Creset %an -%C(cyan)%d%Creset %s %Cgreen(%cr)'
-    lg = log --graph --pretty=format:'%Cred%h%Creset %an -%C(cyan)%d%Creset %s %Cgreen(%cr)'
-    ld = log --pretty=format:'%Cred%h%Creset %C(yellow)%ad%Creset %an -%C(cyan)%d%Creset %s %Cgreen(%cr)'
+    l = log --pretty=format:'%C(yellow)%h%Creset %an:%C(cyan)%d%Creset %s %Cgreen(%cr)'
+    lg = log --graph --pretty=format:'%C(yellow)%h%Creset %an:%C(cyan)%d%Creset %s %Cgreen(%cr)'
+    ld = log --pretty=format:'%C(yellow)%h%Creset %C(yellow)%ad%Creset %an:%C(cyan)%d%Creset %s %Cgreen(%cr)'
 [commit]
     template = ~/.git-commit-message
 [core]
     editor = vim
+	pager = /usr/bin/less
 [diff]
 	colorMoved = zebra
-[init]
-    defaultBranch = main
 [user]
     name = Ian Beckett
     email = redacted
 [pull]
 	rebase = false
+[fem]
+	dev = is global
+[init]
+	defaultBranch = main

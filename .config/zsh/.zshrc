@@ -23,7 +23,7 @@ setopt EXTENDED_HISTORY
 # source software that's fundemental to my worflow
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
-export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+# export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 # TODO: unhide files that are in their proper xdg config dirs
 source $ZDOTDIR/.zsh_aliases
 source $ZDOTDIR/.zsh_functions
