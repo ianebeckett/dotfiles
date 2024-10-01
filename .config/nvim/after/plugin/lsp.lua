@@ -46,8 +46,8 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     --xd may be preferable to dx to mentally separate diagnostic from deletion and avoid the prefix-hotkey issue
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts) -- TODO: doesn't do anthing
-    vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ float= true, count = 1 }) end)
-    vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ float= true, count = -1 }) end)
+    vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ float = true, count = 1 }) end)
+    vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ float = true, count = -1 }) end)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
@@ -55,10 +55,10 @@ require('mason').setup()
 require('mason-lspconfig').setup({
     --install these lsps automatically
     ensure_installed = {
-        'jedi_language_server',
-        'clangd',
         'lua_ls',
         'eslint',
+        'clangd',
+        'jedi_language_server',
     },
     --allow lsp_zero to set default configuration settings for every lsp
     --without this handler, we would have to require('lspconfig').[server].setup({...}) for every server.
