@@ -28,6 +28,7 @@ export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 source $ZDOTDIR/.zsh_aliases
 source $ZDOTDIR/.zsh_functions
 addToPathFront $HOME/scripts
+addToPathFront $HOME/.local # TODO: export
 bindkey -s '^f' "tmux-sessionizer\n"
 
 # precmd runs after executing a command, before the next prompt is printed
