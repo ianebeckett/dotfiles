@@ -29,6 +29,7 @@ source $ZDOTDIR/.zsh_aliases
 source $ZDOTDIR/.zsh_functions
 addToPathFront $HOME/scripts
 addToPathFront $HOME/.local # TODO: export
+addToPathFront $HOME/.local/bin
 bindkey -s '^f' "tmux-sessionizer\n"
 
 # precmd runs after executing a command, before the next prompt is printed
