@@ -21,12 +21,12 @@ require("rose-pine").setup({
         link = "iris",
         panel = "surface",
 
-        error = "rose",
+        error = "#cc0000",
+        warn = "#f2c070",
+        info = "#75beff",
         hint = "iris",
-        info = "foam",
         note = "pine",
         todo = "rose",
-        warn = "gold",
 
         git_add = "foam",
         git_change = "rose",
@@ -49,10 +49,23 @@ require("rose-pine").setup({
 
     palette = {
         -- Override the builtin palette per variant
-        -- moon = {
-        --     base = '#18191a',
-        --     overlay = '#363738',
-        -- },
+        main = {
+            base = '#18191a',
+            surface = '#333333',
+            overlay = '#363738',
+            --muted = '#363738',
+            --subtle = '#ff00000',
+            --text = '#ff00000',
+            --love = '#ff00000',
+            --gold = '#ff00000',
+            --rose = '#ff00000',
+            --pine = '#ff00000',
+            --foam = '#ff00000',
+            --iris = '#ff00000',
+            --highlight_low = '#ff00000',
+            --highlight_med = '#ff00000',
+            --highlight_high = '#ff00000',
+        },
     },
 
 	-- NOTE: Highlight groups are extended (merged) by default. Disable this
@@ -77,5 +90,7 @@ require("rose-pine").setup({
     end,
 })
 
-vim.cmd("colorscheme rose-pine") -- vim.cmd("colorscheme rose-pine-main") vim.cmd("colorscheme rose-pine-moon")
+vim.cmd("colorscheme rose-pine")
+-- vim.cmd("colorscheme rose-pine-main")
+-- vim.cmd("colorscheme rose-pine-moon")
 -- vim.cmd("colorscheme rose-pine-dawn")

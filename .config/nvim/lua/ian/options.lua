@@ -1,6 +1,10 @@
+--netrw settings
+vim.g.netrw_banner = 0 -- hidden
+
 vim.g.mapleader = " "
 vim.opt.guicursor = ""
 vim.opt.encoding = "utf-8"
+vim.opt.statusline="%f %= column %c byte %9.9o 0x%2.2B %{&fileencoding}"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -36,67 +40,3 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = { "80" }
 vim.opt.signcolumn = "yes"
-
---netrw settings
-vim.g.netrw_banner = 0 -- hidden
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
