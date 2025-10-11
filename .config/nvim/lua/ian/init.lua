@@ -1,8 +1,5 @@
-require("ian.set")
-require("ian.remap")
-require("ian.autocmd")
-
---my hope is that including this last will alert me if any of the above have failed
---require("ian.colors.gruvbox")
---require("ian.colors.solarized")
---require("ian.colors.rose-pine")
+require("ian.options")
+require("ian.keymaps")
+require("ian.autocommands")
+require("ian.colors.rose-pine")
+require('mason').setup()

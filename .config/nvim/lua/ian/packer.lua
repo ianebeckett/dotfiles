@@ -2,28 +2,19 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
-
-    --colorschemes
-    use 'ellisonleao/gruvbox.nvim'
-    use 'shaunsingh/solarized.nvim'
+    use 'wbthomason/packer.nvim' -- Packer can manage itself
     use 'rose-pine/neovim'
-
+    use 'williamboman/mason.nvim'
+    use 'neovim/nvim-lspconfig'
     use 'mbbill/undotree'
-    use 'tpope/vim-fugitive'
-
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-    use 'nvim-treesitter/nvim-treesitter-context'
-
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
-
     --telescope needs ripgrep
     --telescope-fzf-native can improve performance
     use {
@@ -31,37 +22,9 @@ return require('packer').startup(function(use)
         tag = '0.1.5',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
-
     use {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
         requires = { { "nvim-lua/plenary.nvim" } }
-    }
-
-    -- lsp, completions, etc
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
-
-    use {
-        'L3MON4D3/LuaSnip',
-        tag = "v2.*",
-    }
-
-    use 'rafamadriz/friendly-snippets'
-
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
-        requires = {
-            -- lsp package manager
-            { 'williamboman/mason.nvim' },
-            { 'williamboman/mason-lspconfig.nvim' },
-            -- LSP Support
-            { 'neovim/nvim-lspconfig' },
-            -- completions
-            { 'hrsh7th/cmp-nvim-lsp' },
-        }
     }
 end)

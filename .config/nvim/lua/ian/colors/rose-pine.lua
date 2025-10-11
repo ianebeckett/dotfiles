@@ -21,7 +21,7 @@ require("rose-pine").setup({
         link = "iris",
         panel = "surface",
 
-        error = "red",
+        error = "rose",
         hint = "iris",
         info = "foam",
         note = "pine",

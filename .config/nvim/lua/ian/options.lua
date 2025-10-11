@@ -3,10 +3,10 @@ vim.opt.guicursor = ""
 vim.opt.encoding = "utf-8"
 
 vim.opt.nu = true
-
--- I'm removing relative numbers because I don't often look at them,
--- and it's a hindrance for other people who look at my screen to communicate
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
+ -- high scrolloff minimizes vertical scanning with eyes
+ -- low scrolloff helps with seeing the entirey of large code blocks at once
+vim.opt.scrolloff = 999
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -32,7 +32,6 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 10 --all the single-digit relative numbers look like a bracket
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = { "80" }
@@ -40,4 +39,64 @@ vim.opt.signcolumn = "yes"
 
 --netrw settings
 vim.g.netrw_banner = 0 -- hidden
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
