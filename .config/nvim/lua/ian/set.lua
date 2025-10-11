@@ -3,7 +3,10 @@ vim.opt.guicursor = ""
 vim.opt.encoding = "utf-8"
 
 vim.opt.nu = true
-vim.opt.relativenumber = true
+
+-- I'm removing relative numbers because I don't often look at them,
+-- and it's a hindrance for other people who look at my screen to communicate
+vim.opt.relativenumber = false
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4

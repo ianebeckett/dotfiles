@@ -60,8 +60,8 @@ require('mason-lspconfig').setup({
         'clangd',
         'jedi_language_server',
     },
+
     --allow lsp_zero to set default configuration settings for every lsp
-    --without this handler, we would have to require('lspconfig').[server].setup({...}) for every server.
     handlers = {
         lsp_zero.default_setup,
         require('mason-lspconfig').setup({
@@ -69,20 +69,10 @@ require('mason-lspconfig').setup({
                 lsp_zero.default_setup,
                 lua_ls = function()
                     local lua_opts = lsp_zero.nvim_lua_ls()
-                    require('lspconfig').lua_ls.setup(lua_opts)
+                    vim.lsp.config.lua_ls.setup(lua_opts)
                 end,
             },
         })
 
     },
-})
-
--- I think this is format-on-write
-require 'lspconfig'.eslint.setup({
-    on_attach = function(client, bufnr)
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = bufnr,
-            command = "echo 'kachowdy!!!!!!!!' && EslintFixAll", -- doesn't work
-        })
-    end,
 })

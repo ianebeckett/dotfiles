@@ -27,9 +27,10 @@ source /usr/share/doc/fzf/examples/completion.zsh
 # TODO: unhide files that are in their proper xdg config dirs
 source $ZDOTDIR/.zsh_aliases
 source $ZDOTDIR/.zsh_functions
-addToPathFront $HOME/scripts
-addToPathFront $HOME/.local # TODO: export
-addToPathFront $HOME/.local/bin
+addToPath $HOME/scripts
+addToPath $HOME/.local # TODO: export
+addToPath $HOME/.local/bin
+addToPath /usr/lib/postgresql/18/bin
 bindkey -s '^f' "tmux-sessionizer\n"
 
 # precmd runs after executing a command, before the next prompt is printed

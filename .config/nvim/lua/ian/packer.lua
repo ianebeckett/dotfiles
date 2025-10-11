@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
     --colorschemes
     use 'ellisonleao/gruvbox.nvim'
     use 'shaunsingh/solarized.nvim'
-    --use 'tomasiser/vim-code-dark'
+    use 'rose-pine/neovim'
 
     use 'mbbill/undotree'
     use 'tpope/vim-fugitive'
