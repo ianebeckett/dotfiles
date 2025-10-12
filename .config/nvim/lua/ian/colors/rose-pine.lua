@@ -21,7 +21,7 @@ require("rose-pine").setup({
         link = "iris",
         panel = "surface",
 
-        error = "#cc0000",
+        error = "#cc5555",
         warn = "#f2c070",
         info = "#75beff",
         hint = "iris",

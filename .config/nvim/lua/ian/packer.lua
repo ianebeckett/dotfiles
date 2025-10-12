@@ -1,11 +1,11 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
+--installs plugins in ~/.local/share/nvim/
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim' -- Packer can manage itself
 
     use 'williamboman/mason.nvim'
-    use 'neovim/nvim-lspconfig'
     use 'mbbill/undotree'
 
     use {
