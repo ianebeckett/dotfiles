@@ -1,7 +1,7 @@
 --LSP reference: https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification
 --lsp logs to ~/.local/state/nvim/lsp.log
-vim.lsp.log.set_level('debug')
-require('vim.lsp.log').set_format_func(vim.inspect)
+--vim.lsp.log.set_level('debug')
+--require('vim.lsp.log').set_format_func(vim.inspect)
 
 --
 --lsp_zero.on_attach(function(client, bufnr)
