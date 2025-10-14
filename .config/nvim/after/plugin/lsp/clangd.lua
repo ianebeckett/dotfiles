@@ -1,11 +1,7 @@
 vim.lsp.config['clangd'] = {
     cmd = { 'clangd', '--clang-tidy' },
-    root_markers = {
-        'compile_commands.json',
-        'makefile',
-        '.git'
-    },
     filetypes = { 'c', 'cpp', 'h', 'hpp' },
+    root_markers = { '.clangd', 'compile_commands.json', '.git' },
     init_options = { '--std=c++17' },
 }
 

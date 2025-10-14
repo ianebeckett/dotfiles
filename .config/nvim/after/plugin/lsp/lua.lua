@@ -1,20 +1,7 @@
---todo
---go to def
---find references
---rename
---format
---toggle comment
---go to implementation?
---etc
-
 vim.lsp.config['lua_ls'] = {
-  cmd = { 'lua-language-server' }, -- Command and arguments to start the server.
-  filetypes = { 'lua' }, -- Filetypes to automatically attach to.
+  cmd = { 'lua-language-server' },
+  filetypes = { 'lua' },
 
-  -- Sets the "root directory" to the parent directory of the file in the
-  -- current buffer that contains either a ".luarc.json" or a
-  -- ".luarc.jsonc" file. Files that share a root directory will reuse
-  -- the connection to the same LSP server.
   root_markers = {
     '.luarc.json',
     '.luarc.jsonc',
@@ -38,7 +25,7 @@ vim.lsp.config['lua_ls'] = {
           globals = { 'vim' },
       },
             workspace = {
-        -- Make the server aware of Neovim runtime files
+        -- Make the server aware of Neovim runtime files (fixes "undefined global: vim)
         library = vim.api.nvim_get_runtime_file("/usr/share/nvim/runtime", true),
       },
       telemetry = {

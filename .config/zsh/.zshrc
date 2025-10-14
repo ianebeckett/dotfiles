@@ -31,6 +31,7 @@ addToPath $HOME/scripts
 addToPath $HOME/.local # TODO: export
 addToPath $HOME/.local/bin
 addToPath /usr/lib/postgresql/18/bin
+addToPath $HOME/.local/lua-language-server/bin
 bindkey -s '^f' "tmux-sessionizer\n"
 
 # precmd runs after executing a command, before the next prompt is printed

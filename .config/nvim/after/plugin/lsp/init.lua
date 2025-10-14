@@ -2,6 +2,7 @@
 --lsp logs to ~/.local/state/nvim/lsp.log
 --vim.lsp.log.set_level('debug')
 --require('vim.lsp.log').set_format_func(vim.inspect)
+--find filetypes and their names via commend :e $VIMRUNTIME/lua/vim/filetype.lua
 
 --
 --lsp_zero.on_attach(function(client, bufnr)
