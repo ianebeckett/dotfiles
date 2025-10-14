@@ -2,30 +2,15 @@ vim.lsp.config['eslint'] = {
   debug = true,
   cmd = { 'vscode-eslint-language-server', '--stdio' },
   root_markers = {
-    'eslint.config.mjs',
-    'eslint.config.js',
-    'eslint.config.cjs',
-    'eslint.config.ts',
-    'eslint.config.mts',
-    'eslint.config.cts',
-    '.eslintrc',
-    '.eslintrc.js',
-    '.eslintrc.cjs',
-    '.eslintrc.yaml',
-    '.eslintrc.yml',
-    '.eslintrc.json',
-    '.git',
+    'eslint.config.mjs', 'eslint.config.js', 'eslint.config.cjs',
+    'eslint.config.ts', 'eslint.config.mts', 'eslint.config.cts',
+    '.eslintrc', '.eslintrc.js', '.eslintrc.cjs',
+    '.eslintrc.yaml', '.eslintrc.yml', '.eslintrc.json', '.git',
   },
   filetypes = {
-    'javascript',
-    'javascriptreact',
-    'javascript.jsx',
-    'typescript',
-    'typescriptreact',
-    'typescript.tsx',
-    'vue',
-    'svelte',
-    'astro',
+    'javascript', 'javascriptreact', 'javascript.jsx',
+    'typescript', 'typescriptreact', 'typescript.tsx',
+    'vue', 'svelte', 'astro',
   },
   --eslint LSP settings references:
   --https://github.com/esmuellert/nvim-eslint?tab=readme-ov-file
@@ -70,4 +55,4 @@ vim.lsp.config['eslint'] = {
   },
 }
 
---vim.lsp.enable('eslint')
+vim.lsp.enable('eslint')
