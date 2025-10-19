@@ -17,15 +17,8 @@
 vim.lsp.config['lua_ls'] = {
   cmd = { 'lua-language-server' },
   filetypes = { 'lua' },
-  root_markers = {
-    '.luarc.json',
-    '.luarc.jsonc',
-    '.luacheckrc',
-    '.stylua.toml',
-    'stylua.toml',
-    'selene.toml',
-    'selene.yml',
-    '.git',
+  root_markers = { '.luarc.json', '.luarc.jsonc', '.luacheckrc', '.stylua.toml',
+    'stylua.toml', 'selene.toml', 'selene.yml', '.git',
   },
   settings = {
     Lua = {
@@ -43,7 +36,7 @@ vim.lsp.config['lua_ls'] = {
         --TODO: set $VIMRUNTIME correctly and get this from there?
         --This way is not preferred, and is making lua_ls take 2 seconds to load.
         --See https://github.com/neovim/nvim-lspconfig/blob/master/lsp/lua_ls.lua
-        library = vim.api.nvim_get_runtime_file("/usr/share/nvim/runtime", true),
+        library = vim.api.nvim_get_runtime_file('', true),
       },
     }
   }
@@ -55,7 +48,29 @@ vim.lsp.config('clangd', {
     init_options = { '--std=c++17' }, --TODO: remove line
 })
 
-vim.lsp.enable({'lua_ls', 'clangd'});
+--vim.lsp.config('eslint', {
+--    --we need to see if nvm-lspconfig defaults work to see if we should submit an issue
+--
+--    --eslint LSP settings references:
+--    --https://github.com/esmuellert/nvim-eslint?tab=readme-ov-file
+--    --https://github.com/microsoft/vscode-eslint/blob/790646388696511b2665a4d119bf0fb713dd990d/%24shared/settings.ts#L156-L178
+--    --https://github.com/Microsoft/vscode-eslint#settings-options
+--    --https://github.com/microsoft/vscode-languageserver-node (search for vscode-languageserver-protocol)
+--    settings = {
+--        debug = true, -- what does this even do?
+--        useFlatConfig = true,
+--        codeActionOnSave = { enable = false, mode = 'all' },
+--        format = false, -- use Prettier
+--        quiet = false,
+--        workingDirectory = { mode = 'location' },
+--    },
+--})
+
+vim.lsp.enable({
+    'lua_ls',
+    'clangd',
+--    'eslint',
+});
 
 --TODO: configure this stuff
 --lsp_zero.on_attach(function(client, bufnr)
