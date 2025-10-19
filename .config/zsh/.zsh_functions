@@ -5,28 +5,6 @@ cd() {
 
 # beware infinite loops when failing to use command foo in function foo()
 
-edot() {
-    cd ~/.dotfiles && vim ~/.dotfiles
-}
-
-etmux() {
-    cd ~/.dotfiles/.config/tmux && vim ~/.dotfiles/.config/tmux
-}
-
-# cd first to remember harpoons and enable fugutive
-# TODO: change paths to be via $DOTFILES, as opposed to symlinks, to enable fugitive
-# TODO: only cd if not currently at right spot in order to preserve prev 
-# (or just use push/popd?)
-evim() {
-    cd ~/.dotfiles/.config/nvim && vim ~/.dotfiles/.config//nvim
-}
-
-ezsh() {
-    cd ~/.dotfiles/.config/zsh && vim $ZDOTDIR
-}
-
-# ewm() {}
-
 info() {
     command info --vi-keys --subnodes $@
 }
