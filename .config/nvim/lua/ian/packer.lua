@@ -8,6 +8,16 @@ return require('packer').startup(function(use)
     use 'mbbill/undotree' -- todo: replace with builtin undotree?
     use 'rose-pine/neovim'
 
+    --todo: fix use of deprecated functions here:
+    --:checkhealth vim.deprecated
+    use {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        -- can I move this func to autopairs.lua?
+        config = function()
+            require("nvim-autopairs").setup {}
+        end
+    }
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
