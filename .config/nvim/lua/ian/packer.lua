@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'
     use 'mbbill/undotree' -- todo: replace with builtin undotree?
     use 'rose-pine/neovim'
+    use 'lewis6991/gitsigns.nvim'
 
     --todo: fix use of deprecated functions here:
     --:checkhealth vim.deprecated
